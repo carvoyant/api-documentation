@@ -12,6 +12,7 @@ Getting Started
 
 .. toctree::
    :maxdepth: 2
+   :titlesonly:
    
    getting-started/index
 
