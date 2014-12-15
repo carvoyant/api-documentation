@@ -6,11 +6,48 @@
 Welcome to Carvoyant API's documentation!
 =========================================
 
+
+Getting Started
+---------------
+
 .. toctree::
    :maxdepth: 2
+   :titlesonly:
    
    getting-started/index
+
+Carvoyant API
+-------------
+
+.. toctree::
+	:maxdepth: 2
+   :titlesonly:
+	
 	carvoyant-api/index
+
+Sandbox API
+-----------
+
+.. toctree::
+	:maxdepth: 2
+   :titlesonly:
+	
 	sandbox-api/index
+
+Driver Dashboard
+----------------
+
+.. toctree::
+	:maxdepth: 2
+   :titlesonly:
+	
 	driver-dashboard/index
+
+Sample Integrations
+-------------------
+
+.. toctree::
+	:maxdepth: 2
+   :titlesonly:
+	
 	sample-integrations/index
