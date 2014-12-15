@@ -41,7 +41,7 @@ We've also added a couple of sample applications to our GitHub repository.
 
 `Example-Carvoyant-Web-App <https://github.com/carvoyant/Example-Carvoyant-Web-App>`_ is a Grails web application that uses it's own security model to authenticate it's application users and then lets that user connect to their Carvoyant account.  This application uses the Authorization Code grant type.
 
-.. .. toctree::
+.. toctree::
    :maxdepth: 2
    
    oauth2-delegated-access
