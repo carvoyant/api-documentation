@@ -4,6 +4,7 @@ Getting Started
 .. toctree::
    :maxdepth: 3
    :hidden:
+   :titlesonly:
                
    oauth2-delegated-access
    access-registration
