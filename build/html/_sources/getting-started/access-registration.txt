@@ -71,6 +71,14 @@ As the Carvoyant user base grows, connected users are going to want to connect m
 
 When the you are ready to have your user authorize you to their Carvoyant account, you simply open a browser and redirect them to our authorization page.  The URL looks like this:::
 
-   https://sandbox-auth.carvoyant.com/OAuth/authorize?client_id=r6dwmz2zxkqms7sac2r8mdqa&redirect_uri=https%3A%2F%2Ftest.carvoyant.com&response_type=token
+   https://sandbox-auth.carvoyant.com/OAuth/authorize?client_id=r6dwmz2zxkqms7XXXXXXXXXX&redirect_uri=https%3A%2F%2Ftest.carvoyant.com&response_type=token
 
 Replace the ``client_id`` with your applications client_id and the ``redirect_uri`` with the URL that you will listen on for the response.  The user will be presented with a screen like this:
+
+.. image:: auth-dialog.png
+
+Note that the user can log in with their existing credentials or they can register a new one right there.  From a partner's perspective, you can simply provide a "Connect Carvoyant" action and this will solve the integration for both new Carvoyant users and already existing Carvoyant users.  After the user logs in and authorizes access, they will be redirected back to the URL you specified in the redirect_uri parameter and it will include the authorization code.  The URL will look like this:::
+
+   https://test.carvoyant.com?code=dj6fpxdbkh3xqyXXXXXXXXXX
+
+The code query parameter in that URL is the authorization code that is used to request the access token.  That process is identical to what is outlined above.  Note that this example is using the authorization code grant type.  The same process can be followed for the ``implicit`` grant type.
