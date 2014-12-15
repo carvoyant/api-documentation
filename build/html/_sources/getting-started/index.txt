@@ -1,6 +1,8 @@
 Getting Started
 ===============
 
+This is some test text
+
 .. toctree::
    :maxdepth: 3
                

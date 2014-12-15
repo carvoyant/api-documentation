@@ -10,6 +10,67 @@ In many cases, our partners will be bringing on new Carvoyant users to our platf
 
 If you don't want to require the user to go through the Carvoyant UI for account creation, you can simply call the account creation API endpoint in our system. You will need to pass over all of the required fields for a new account.  The response to the account creation call will include an authorization code.  That code can then be used to programmatically generate the access token.  An example request flow looks like this:
 
-Account Creation Request::
+*Account Creation Request*::
 
    curl -X POST -H 'Authorization: Bearer m7dwthfgv9dvdpxXXXXXXXXX' -H 'Content-Type: application/json' https://sandbox-api.carvoyant.com/sandbox/api/account/ -d '{"firstName": "Doc","lastName": "Test","email": "matt@carvoyant.com","username": "doctest","password": "doctestpassword"}'
+
+*Account Creation Response*::
+
+   {
+       "account":{
+           "id":166,
+           "firstName":"Doc",
+           "lastName":"Test",
+           "username":null,
+           "dateCreated":"20141112T195503+0000",
+           "email":"matt@carvoyant.com",
+           "zipcode":null,
+           "phone":null,
+           "timeZone":null,
+           "preferredContact":null,
+           "accessToken":{
+               "code":"dj6fpxdbkh3xqyXXXXXXXXXX"
+           }
+       },
+       "totalRecords":1
+   }
+
+Note the ``accessToken.code`` in the response.
+
+Now lets get the access token:
+
+*Access Token Request*::
+
+   curl --user r6dwmz2zxkqms7sac2r8mdqa:XXXXXXXXXX -d "grant_type=authorization_i=https://test.carvoyant.com" "https://sandbox-api.carvoyant.com/sandbox/oauth/token"
+
+*Access Token Response*::
+
+   {
+       "access_token":"6dpmu7c4gv3s3yXXXXXXXXXX",
+       "token_type":"bearer",
+       "expires_in":86400,
+       "refresh_token":"z9h69fqx4cdkfjXXXXXXXXXX"
+   }
+
+Now you've successfully registered a new Carvoyant account and generated an access token into the API for that user without requiring the user manually log in.
+
+.. note::
+
+   Accounts created in this way make it very easy for the end user to misunderstand who is collecting their data and who is storing it.  If you are generating accounts and access tokens for Carvoyant users in this manner, you must notify them of the following:
+
+   #. Their Carvoyant user credentials (ie, the username and password that was passed in to the account creation).
+   #. A link to https://driver.carvoyant.com where the user can access their Carvoyant account.
+   #. A clear statement that their connected car data is being collected on their behalf by Carvoyant and made available to you, our partner.
+
+If there are any questions about this, please contact us: `contact us <support@carvoyant.com>`_.
+
+Scenario 2 - Existing Carvoyant User (or using the Carvoyant new account UI)
+----------------------------------------------------------------------------
+
+As the Carvoyant user base grows, connected users are going to want to connect more and more applications to their connected car.  In order to do this, application providers need to allow those users to authorize the partner's application to the user's Carvoyant account.  This is done by using our authorization server.  Note that this process is also outlined on our OAuth2 / Delegated Access documentation.
+
+When the you are ready to have your user authorize you to their Carvoyant account, you simply open a browser and redirect them to our authorization page.  The URL looks like this:::
+
+   https://sandbox-auth.carvoyant.com/OAuth/authorize?client_id=r6dwmz2zxkqms7sac2r8mdqa&redirect_uri=https%3A%2F%2Ftest.carvoyant.com&response_type=token
+
+Replace the ``client_id`` with your applications client_id and the ``redirect_uri`` with the URL that you will listen on for the response.  The user will be presented with a screen like this:

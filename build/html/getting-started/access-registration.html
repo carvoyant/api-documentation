@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Access and Registration Workflow &mdash; Carvoyant API 1.0 documentation</title>
+    <title>Access &amp; Registration Workflows &mdash; Carvoyant API 1.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -51,10 +51,74 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="access-and-registration-workflow">
-<h1>Access and Registration Workflow<a class="headerlink" href="#access-and-registration-workflow" title="Permalink to this headline">¶</a></h1>
-<p>Bacon ipsum dolor amet in dolore ut meatloaf, irure magna pork loin commodo. Exercitation shank kielbasa consequat proident in laborum id, irure ground round deserunt flank swine in. Alcatra jowl laborum voluptate eiusmod. In meatloaf consectetur, brisket turkey excepteur filet mignon dolor biltong consequat jerky magna. Occaecat cupidatat pork chop tail. Et landjaeger deserunt andouille, jerky chuck porchetta.</p>
-<p>Frankfurter beef voluptate alcatra drumstick. Veniam irure aute sirloin porchetta, chicken jerky in kielbasa dolor. Frankfurter pig shank spare ribs corned beef, sausage tempor nostrud ullamco beef ribs ut eiusmod reprehenderit strip steak ham. Ipsum id nisi commodo nulla kevin.</p>
+  <div class="section" id="access-registration-workflows">
+<h1>Access &amp; Registration Workflows<a class="headerlink" href="#access-registration-workflows" title="Permalink to this headline">¶</a></h1>
+<p>When a partner creates an application for the Carvoyant platform, it is necessary to handle two different user scenarios.  In the first scenario, the end user does not already have a Carvoyant account and needs to be registered with the Carvoyant platform.  In the second scenario, the user already has a Carvoyant account and simply wants to connect the partners application to their account. This poses some questions regarding how the Carvoyant account is created (when necessary), how Carvoyant validates that the user has granted access to the partner application and how the partner uses that access.  If you are not already familiar with the OAuth mechanism used in the Carvoyant Platform, please read that first.</p>
+<div class="section" id="scenario-1-new-carvoyant-account">
+<h2>Scenario 1 - New Carvoyant Account<a class="headerlink" href="#scenario-1-new-carvoyant-account" title="Permalink to this headline">¶</a></h2>
+<p>In many cases, our partners will be bringing on new Carvoyant users to our platform as a part of their application.  Perhaps you are creating a brand new connected car application.  Or maybe you&#8217;re simply adding connected car features to your existing application.  In either case, it is necessary to create the Carvoyant user account.  This can be done two ways. First, you can just treat the &#8220;new&#8221; and &#8220;existing&#8221; customers the exact same way.  You simply prompt them to authorize Carvoyant to access their account and then take them to our authentication server as outlined in our OAuth documentation.  If you want to use this method, please see Scenario 2.</p>
+<p>If you don&#8217;t want to require the user to go through the Carvoyant UI for account creation, you can simply call the account creation API endpoint in our system. You will need to pass over all of the required fields for a new account.  The response to the account creation call will include an authorization code.  That code can then be used to programmatically generate the access token.  An example request flow looks like this:</p>
+<p><em>Account Creation Request</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -X POST -H &#39;Authorization: Bearer m7dwthfgv9dvdpxXXXXXXXXX&#39; -H &#39;Content-Type: application/json&#39; https://sandbox-api.carvoyant.com/sandbox/api/account/ -d &#39;{&quot;firstName&quot;: &quot;Doc&quot;,&quot;lastName&quot;: &quot;Test&quot;,&quot;email&quot;: &quot;matt@carvoyant.com&quot;,&quot;username&quot;: &quot;doctest&quot;,&quot;password&quot;: &quot;doctestpassword&quot;}&#39;
+</pre></div>
+</div>
+<p><em>Account Creation Response</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;account&quot;</span><span class="p">:{</span>
+        <span class="s">&quot;id&quot;</span><span class="p">:</span><span class="mi">166</span><span class="p">,</span>
+        <span class="s">&quot;firstName&quot;</span><span class="p">:</span><span class="s">&quot;Doc&quot;</span><span class="p">,</span>
+        <span class="s">&quot;lastName&quot;</span><span class="p">:</span><span class="s">&quot;Test&quot;</span><span class="p">,</span>
+        <span class="s">&quot;username&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;dateCreated&quot;</span><span class="p">:</span><span class="s">&quot;20141112T195503+0000&quot;</span><span class="p">,</span>
+        <span class="s">&quot;email&quot;</span><span class="p">:</span><span class="s">&quot;matt@carvoyant.com&quot;</span><span class="p">,</span>
+        <span class="s">&quot;zipcode&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;phone&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;timeZone&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;preferredContact&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;accessToken&quot;</span><span class="p">:{</span>
+            <span class="s">&quot;code&quot;</span><span class="p">:</span><span class="s">&quot;dj6fpxdbkh3xqyXXXXXXXXXX&quot;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s">&quot;totalRecords&quot;</span><span class="p">:</span><span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note the <tt class="docutils literal"><span class="pre">accessToken.code</span></tt> in the response.</p>
+<p>Now lets get the access token:</p>
+<p><em>Access Token Request</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl --user r6dwmz2zxkqms7sac2r8mdqa:XXXXXXXXXX -d &quot;grant_type=authorization_i=https://test.carvoyant.com&quot; &quot;https://sandbox-api.carvoyant.com/sandbox/oauth/token&quot;
+</pre></div>
+</div>
+<p><em>Access Token Response</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;access_token&quot;</span><span class="p">:</span><span class="s">&quot;6dpmu7c4gv3s3yXXXXXXXXXX&quot;</span><span class="p">,</span>
+    <span class="s">&quot;token_type&quot;</span><span class="p">:</span><span class="s">&quot;bearer&quot;</span><span class="p">,</span>
+    <span class="s">&quot;expires_in&quot;</span><span class="p">:</span><span class="mi">86400</span><span class="p">,</span>
+    <span class="s">&quot;refresh_token&quot;</span><span class="p">:</span><span class="s">&quot;z9h69fqx4cdkfjXXXXXXXXXX&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now you&#8217;ve successfully registered a new Carvoyant account and generated an access token into the API for that user without requiring the user manually log in.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Accounts created in this way make it very easy for the end user to misunderstand who is collecting their data and who is storing it.  If you are generating accounts and access tokens for Carvoyant users in this manner, you must notify them of the following:</p>
+<ol class="last arabic simple">
+<li>Their Carvoyant user credentials (ie, the username and password that was passed in to the account creation).</li>
+<li>A link to <a class="reference external" href="https://driver.carvoyant.com">https://driver.carvoyant.com</a> where the user can access their Carvoyant account.</li>
+<li>A clear statement that their connected car data is being collected on their behalf by Carvoyant and made available to you, our partner.</li>
+</ol>
+</div>
+<p>If there are any questions about this, please contact us: <a class="reference external" href="mailto:support&#37;&#52;&#48;carvoyant&#46;com">contact us</a>.</p>
+<div class="section" id="scenario-2-existing-carvoyant-user-or-using-the-carvoyant-new-account-ui">
+<h3>Scenario 2 - Existing Carvoyant User (or using the Carvoyant new account UI)<a class="headerlink" href="#scenario-2-existing-carvoyant-user-or-using-the-carvoyant-new-account-ui" title="Permalink to this headline">¶</a></h3>
+<p>As the Carvoyant user base grows, connected users are going to want to connect more and more applications to their connected car.  In order to do this, application providers need to allow those users to authorize the partner&#8217;s application to the user&#8217;s Carvoyant account.  This is done by using our authorization server.  Note that this process is also outlined on our OAuth2 / Delegated Access documentation.</p>
+<p>When the you are ready to have your user authorize you to their Carvoyant account, you simply open a browser and redirect them to our authorization page.  The URL looks like this::</p>
+<div class="highlight-python"><div class="highlight"><pre>https://sandbox-auth.carvoyant.com/OAuth/authorize?client_id=r6dwmz2zxkqms7sac2r8mdqa&amp;redirect_uri=https%3A%2F%2Ftest.carvoyant.com&amp;response_type=token
+</pre></div>
+</div>
+<p>Replace the <tt class="docutils literal"><span class="pre">client_id</span></tt> with your applications client_id and the <tt class="docutils literal"><span class="pre">redirect_uri</span></tt> with the URL that you will listen on for the response.  The user will be presented with a screen like this:</p>
+</div>
+</div>
 </div>
 
 
@@ -63,6 +127,17 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Access &amp; Registration Workflows</a><ul>
+<li><a class="reference internal" href="#scenario-1-new-carvoyant-account">Scenario 1 - New Carvoyant Account</a><ul>
+<li><a class="reference internal" href="#scenario-2-existing-carvoyant-user-or-using-the-carvoyant-new-account-ui">Scenario 2 - Existing Carvoyant User (or using the Carvoyant new account UI)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="oauth2-delegated-access.html"
                         title="previous chapter">OAuth2 / Delegated Access</a></p>
