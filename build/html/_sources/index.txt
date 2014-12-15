@@ -11,18 +11,16 @@ Getting Started
 ---------------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :titlesonly:
    
    getting-started/index
-   getting-started/oauth2-delegated-access
-   getting-started/access-registration
 
 Carvoyant API
 -------------
 
 .. toctree::
-	:maxdepth: 3
+	:maxdepth: 2
 	
 	carvoyant-api/index
 
@@ -30,7 +28,7 @@ Sandbox API
 -----------
 
 .. toctree::
-	:maxdepth: 3
+	:maxdepth: 2
 	
 	sandbox-api/index
 
@@ -38,7 +36,7 @@ Driver Dashboard
 ----------------
 
 .. toctree::
-	:maxdepth: 3
+	:maxdepth: 2
 	
 	driver-dashboard/index
 
@@ -46,7 +44,7 @@ Sample Integrations
 -------------------
 
 .. toctree::
-	:maxdepth: 3
+	:maxdepth: 2
 	
 	sample-integrations/index
 
