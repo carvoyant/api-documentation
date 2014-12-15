@@ -1,6 +1,13 @@
 Getting Started
 ===============
 
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   
+   oauth2-delegated-access
+   access-registration
+   
 Overview
 --------
 
@@ -40,9 +47,3 @@ We've also added a couple of sample applications to our GitHub repository.
 `Car-Locator <https://github.com/carvoyant/Car-Locator>`_ is an Android application that uses the Implicit grant type to authenticate a user.  Once logged in, it displays a map of the users Carvoyant enabled vehicles.
 
 `Example-Carvoyant-Web-App <https://github.com/carvoyant/Example-Carvoyant-Web-App>`_ is a Grails web application that uses it's own security model to authenticate it's application users and then lets that user connect to their Carvoyant account.  This application uses the Authorization Code grant type.
-
-.. toctree::
-   :maxdepth: 2
-   
-   oauth2-delegated-access
-   access-registration
