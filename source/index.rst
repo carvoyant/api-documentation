@@ -12,8 +12,11 @@ Getting Started
 
 .. toctree::
    :maxdepth: 3
+   :titlesonly:
    
    getting-started/index
+   getting-started/oauth2-delegated-access
+   getting-started/access-registration
 
 Carvoyant API
 -------------

@@ -1,8 +1,5 @@
-Getting Started
-===============
-
 Overview
---------
+========
 
 Before accessing the Carvoyant system as a developer, you must first register on our developer portal.  After your account is registered, you will be able to make calls into our system.  One of our main philosophies is that our users have full control over who can access the data for their vehicles.  In order to facilitate this, nearly all calls that a developer makes into the system requires an `OAuth2 <http://tools.ietf.org/html/draft-ietf-oauth-v2-20>`_ access token that the end user has granted.  Once a token has been granted, the various Carvoyant resources will be accessible through the API.
 
@@ -40,11 +37,3 @@ We've also added a couple of sample applications to our GitHub repository.
 `Car-Locator <https://github.com/carvoyant/Car-Locator>`_ is an Android application that uses the Implicit grant type to authenticate a user.  Once logged in, it displays a map of the users Carvoyant enabled vehicles.
 
 `Example-Carvoyant-Web-App <https://github.com/carvoyant/Example-Carvoyant-Web-App>`_ is a Grails web application that uses it's own security model to authenticate it's application users and then lets that user connect to their Carvoyant account.  This application uses the Authorization Code grant type.
-
-
-.. toctree::
-   :maxdepth: 3
-   :hidden:
-               
-   oauth2-delegated-access
-   access-registration

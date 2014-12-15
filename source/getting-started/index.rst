@@ -1,16 +1,5 @@
-Getting Started
-===============
-
-.. toctree::
-   :maxdepth: 3
-   :hidden:
-   :titlesonly:
-               
-   oauth2-delegated-access
-   access-registration
-   
 Overview
---------
+========
 
 Before accessing the Carvoyant system as a developer, you must first register on our developer portal.  After your account is registered, you will be able to make calls into our system.  One of our main philosophies is that our users have full control over who can access the data for their vehicles.  In order to facilitate this, nearly all calls that a developer makes into the system requires an `OAuth2 <http://tools.ietf.org/html/draft-ietf-oauth-v2-20>`_ access token that the end user has granted.  Once a token has been granted, the various Carvoyant resources will be accessible through the API.
 
