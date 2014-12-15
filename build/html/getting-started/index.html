@@ -51,8 +51,36 @@
             
   <div class="section" id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
-<p>This is some test text</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Before accessing the Carvoyant system as a developer, you must first register on our developer portal.  After your account is registered, you will be able to make calls into our system.  One of our main philosophies is that our users have full control over who can access the data for their vehicles.  In order to facilitate this, nearly all calls that a developer makes into the system requires an <a class="reference external" href="http://tools.ietf.org/html/draft-ietf-oauth-v2-20">OAuth2</a> access token that the end user has granted.  Once a token has been granted, the various Carvoyant resources will be accessible through the API.</p>
+</div>
+<div class="section" id="developer-registration">
+<h2>Developer Registration<a class="headerlink" href="#developer-registration" title="Permalink to this headline">¶</a></h2>
+<p>The first step in building an application for the Carvoyant system is to register with us as a developer.  We have several different developer levels depending on your interest.  You can view the different developer levels and associated pricing <a class="reference external" href="https://developer.carvoyant.com/pricing">here</a> or you can just go register <a class="reference external" href="https://developer.carvoyant.com/member/register">here</a>.</p>
+<p>During registration you will enter in some basic information about your application and you will be given an API key to use in your application.  Please only create a Standard Developer key if you are also purchasing a developer device or already have a Carvoyant enable vehicle.  A free Trial key is available if you are just taking a look.</p>
+</div>
+<div class="section" id="sandbox-access">
+<h2>Sandbox Access<a class="headerlink" href="#sandbox-access" title="Permalink to this headline">¶</a></h2>
+<p>In order to allow developers to try out our system, or even just develop against a non-production environment, we&#8217;ve created a Sandbox version of our API.  This environment matches our production environment with two important distinctions.  First, it is not possibly to connect a live vehicle to an account in this system.  All of the data in this system is &#8220;fake&#8221;.  Second, all developers have the ability to call an endpoint that allows them to create their own vehicle data.  In this way, you can programmatically generate the vehicle data that you need to test your application.  Review the information about the Sandbox API to get started.</p>
+</div>
+<div class="section" id="paid-standard-developer-accounts">
+<h2>Paid Standard Developer Accounts<a class="headerlink" href="#paid-standard-developer-accounts" title="Permalink to this headline">¶</a></h2>
+<p>Every paid Standard Developer account also includes one telematics device to connect your car to the Carvoyant platform.  Before that the data for your car can be accessed, you must register as a Carvoyant user <a class="reference external" href="https://driver.carvoyant.com">here</a> (this can also be done through an API call).  It&#8217;s important to recognize the difference between a developer account and a user account.  Developer accounts are authorized to make API calls against the Carvoyant platform.</p>
+</div>
+<div class="section" id="developer-vs-user-accounts">
+<h2>Developer vs. User Accounts<a class="headerlink" href="#developer-vs-user-accounts" title="Permalink to this headline">¶</a></h2>
+<p>When working with the Carvoyant platform, it&#8217;s very important to understand the difference between Developer accounts and User accounts.  A Developer account is registered through <a class="reference external" href="https://developer.carvoyant.com">https://developer.carvoyant.com</a> and is what you will use to interact with the Carvoyant API. A User account is registered with the Carvoyant platform (either programmatically through the /account endpoint, or on the driver dashboard at <a class="reference external" href="https://driver.carvoyant.com">https://driver.carvoyant.com</a> ).  User accounts contain the vehicles which contain the data collected by the telematics device.</p>
+<p>All Carvoyant Users can create a Developer account to access their own connected car data.</p>
+</div>
+<div class="section" id="making-an-api-call">
+<h2>Making an API Call<a class="headerlink" href="#making-an-api-call" title="Permalink to this headline">¶</a></h2>
+<p>The best way to get familiar with our API is to jump in and start using it.  Using our <a class="reference external" href="https://developer.carvoyant.com/io-docs">interactive documentation</a>, you can start calling the API directly.</p>
+<p>We&#8217;ve also added a couple of sample applications to our GitHub repository.</p>
+<p><a class="reference external" href="https://github.com/carvoyant/Car-Locator">Car-Locator</a> is an Android application that uses the Implicit grant type to authenticate a user.  Once logged in, it displays a map of the users Carvoyant enabled vehicles.</p>
+<p><a class="reference external" href="https://github.com/carvoyant/Example-Carvoyant-Web-App">Example-Carvoyant-Web-App</a> is a Grails web application that uses it&#8217;s own security model to authenticate it&#8217;s application users and then lets that user connect to their Carvoyant account.  This application uses the Authorization Code grant type.</p>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
@@ -65,6 +93,19 @@
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/carvoyant-logo.png" alt="Logo"/>
             </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Getting Started</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#developer-registration">Developer Registration</a></li>
+<li><a class="reference internal" href="#sandbox-access">Sandbox Access</a></li>
+<li><a class="reference internal" href="#paid-standard-developer-accounts">Paid Standard Developer Accounts</a></li>
+<li><a class="reference internal" href="#developer-vs-user-accounts">Developer vs. User Accounts</a></li>
+<li><a class="reference internal" href="#making-an-api-call">Making an API Call</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="../index.html"
                         title="previous chapter">Welcome to Carvoyant API&#8217;s documentation!</a></p>
