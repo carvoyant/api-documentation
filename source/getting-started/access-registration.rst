@@ -1,6 +1,10 @@
 Access & Registration Workflows
 ===============================
 
+.. toctree::
+   :hidden:
+   :maxdepth: 3
+
 When a partner creates an application for the Carvoyant platform, it is necessary to handle two different user scenarios.  In the first scenario, the end user does not already have a Carvoyant account and needs to be registered with the Carvoyant platform.  In the second scenario, the user already has a Carvoyant account and simply wants to connect the partners application to their account. This poses some questions regarding how the Carvoyant account is created (when necessary), how Carvoyant validates that the user has granted access to the partner application and how the partner uses that access.  If you are not already familiar with the OAuth mechanism used in the Carvoyant Platform, please read that first.
 
 Scenario 1 - New Carvoyant Account
