@@ -109,15 +109,15 @@
 </ol>
 </div>
 <p>If there are any questions about this, please contact us: <a class="reference external" href="mailto:support&#37;&#52;&#48;carvoyant&#46;com">contact us</a>.</p>
+</div>
 <div class="section" id="scenario-2-existing-carvoyant-user-or-using-the-carvoyant-new-account-ui">
-<h3>Scenario 2 - Existing Carvoyant User (or using the Carvoyant new account UI)<a class="headerlink" href="#scenario-2-existing-carvoyant-user-or-using-the-carvoyant-new-account-ui" title="Permalink to this headline">¶</a></h3>
+<h2>Scenario 2 - Existing Carvoyant User (or using the Carvoyant new account UI)<a class="headerlink" href="#scenario-2-existing-carvoyant-user-or-using-the-carvoyant-new-account-ui" title="Permalink to this headline">¶</a></h2>
 <p>As the Carvoyant user base grows, connected users are going to want to connect more and more applications to their connected car.  In order to do this, application providers need to allow those users to authorize the partner&#8217;s application to the user&#8217;s Carvoyant account.  This is done by using our authorization server.  Note that this process is also outlined on our OAuth2 / Delegated Access documentation.</p>
 <p>When the you are ready to have your user authorize you to their Carvoyant account, you simply open a browser and redirect them to our authorization page.  The URL looks like this::</p>
 <div class="highlight-python"><div class="highlight"><pre>https://sandbox-auth.carvoyant.com/OAuth/authorize?client_id=r6dwmz2zxkqms7sac2r8mdqa&amp;redirect_uri=https%3A%2F%2Ftest.carvoyant.com&amp;response_type=token
 </pre></div>
 </div>
 <p>Replace the <tt class="docutils literal"><span class="pre">client_id</span></tt> with your applications client_id and the <tt class="docutils literal"><span class="pre">redirect_uri</span></tt> with the URL that you will listen on for the response.  The user will be presented with a screen like this:</p>
-</div>
 </div>
 </div>
 
@@ -130,10 +130,8 @@
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Access &amp; Registration Workflows</a><ul>
-<li><a class="reference internal" href="#scenario-1-new-carvoyant-account">Scenario 1 - New Carvoyant Account</a><ul>
+<li><a class="reference internal" href="#scenario-1-new-carvoyant-account">Scenario 1 - New Carvoyant Account</a></li>
 <li><a class="reference internal" href="#scenario-2-existing-carvoyant-user-or-using-the-carvoyant-new-account-ui">Scenario 2 - Existing Carvoyant User (or using the Carvoyant new account UI)</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>

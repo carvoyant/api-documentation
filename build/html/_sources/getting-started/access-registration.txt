@@ -65,7 +65,7 @@ Now you've successfully registered a new Carvoyant account and generated an acce
 If there are any questions about this, please contact us: `contact us <support@carvoyant.com>`_.
 
 Scenario 2 - Existing Carvoyant User (or using the Carvoyant new account UI)
-############################################################################
+----------------------------------------------------------------------------
 
 As the Carvoyant user base grows, connected users are going to want to connect more and more applications to their connected car.  In order to do this, application providers need to allow those users to authorize the partner's application to the user's Carvoyant account.  This is done by using our authorization server.  Note that this process is also outlined on our OAuth2 / Delegated Access documentation.
 
