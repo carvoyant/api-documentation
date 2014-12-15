@@ -11,7 +11,7 @@ Getting Started
 ---------------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    
    getting-started/index
 
@@ -19,7 +19,7 @@ Carvoyant API
 -------------
 
 .. toctree::
-	:maxdepth: 3
+	:maxdepth: 2
 	
 	carvoyant-api/index
 
@@ -27,7 +27,7 @@ Sandbox API
 -----------
 
 .. toctree::
-	:maxdepth: 3
+	:maxdepth: 2
 	
 	sandbox-api/index
 
@@ -35,7 +35,7 @@ Driver Dashboard
 ----------------
 
 .. toctree::
-	:maxdepth: 3
+	:maxdepth: 2
 	
 	driver-dashboard/index
 
@@ -43,16 +43,6 @@ Sample Integrations
 -------------------
 
 .. toctree::
-	:maxdepth: 3
+	:maxdepth: 2
 	
 	sample-integrations/index
-
-Search
-======
-
-* :ref:`search`
-
-Contents:
-
-.. toctree::
-   :maxdepth: 2
