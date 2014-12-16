@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Sandbox API &mdash; Carvoyant API 1.0 documentation</title>
+    <title>HTTP Verbs &mdash; Carvoyant API 1.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -24,8 +24,9 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Carvoyant API 1.0 documentation" href="../index.html" />
-    <link rel="next" title="Driver Dashboard" href="../driver-dashboard/index.html" />
-    <link rel="prev" title="Sorting and Paging" href="../carvoyant-api/sorting-and-paging.html" /> 
+    <link rel="up" title="Carvoyant API" href="index.html" />
+    <link rel="next" title="Sorting and Paging" href="sorting-and-paging.html" />
+    <link rel="prev" title="JSON Error Response Format" href="json-format-error.html" /> 
   </head>
   <body>
     <div class="related">
@@ -35,12 +36,13 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../driver-dashboard/index.html" title="Driver Dashboard"
+          <a href="sorting-and-paging.html" title="Sorting and Paging"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../carvoyant-api/sorting-and-paging.html" title="Sorting and Paging"
+          <a href="json-format-error.html" title="JSON Error Response Format"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Carvoyant API 1.0 documentation</a> &raquo;</li> 
+        <li><a href="../index.html">Carvoyant API 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Carvoyant API</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -49,10 +51,43 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="sandbox-api">
-<h1>Sandbox API<a class="headerlink" href="#sandbox-api" title="Permalink to this headline">¶</a></h1>
-<p>Bacon ipsum dolor amet in dolore ut meatloaf, irure magna pork loin commodo. Exercitation shank kielbasa consequat proident in laborum id, irure ground round deserunt flank swine in. Alcatra jowl laborum voluptate eiusmod. In meatloaf consectetur, brisket turkey excepteur filet mignon dolor biltong consequat jerky magna. Occaecat cupidatat pork chop tail. Et landjaeger deserunt andouille, jerky chuck porchetta.</p>
-<p>Frankfurter beef voluptate alcatra drumstick. Veniam irure aute sirloin porchetta, chicken jerky in kielbasa dolor. Frankfurter pig shank spare ribs corned beef, sausage tempor nostrud ullamco beef ribs ut eiusmod reprehenderit strip steak ham. Ipsum id nisi commodo nulla kevin.</p>
+  <div class="section" id="http-verbs">
+<h1>HTTP Verbs<a class="headerlink" href="#http-verbs" title="Permalink to this headline">¶</a></h1>
+<p>One of the recurring areas of confusion around APIs that strive to be RESTful has to do with the mapping of HTTP verbs to actual server side actions.  Here are some guidelines for how the Carvoyant API handles the various verbs for different resource types.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="5%" />
+<col width="48%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Verb</th>
+<th class="head">Container (e.g. /vehicle)</th>
+<th class="head">Entity (e.g. /vehicle/{id})</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>GET</td>
+<td>Returns a list of all entities in the container.</td>
+<td>Returns the specified entity.</td>
+</tr>
+<tr class="row-odd"><td>PUT</td>
+<td>Currently not supported for any container type. In practice, this would
+replace the entire container with the entities specified in the request.</td>
+<td>Replaces the specified entity.</td>
+</tr>
+<tr class="row-even"><td>POST</td>
+<td>Creates a new entity within the container.</td>
+<td>Updates the specified entity. Only data elements included in
+the request will be updated. Non-specifiied fields will not be changed.</td>
+</tr>
+<tr class="row-odd"><td>DELETE</td>
+<td>Currently not supported for any container type. In practice, this would
+delete all entities in the container.</td>
+<td>Deletes the specified entity.</td>
+</tr>
+</tbody>
+</table>
 </div>
 
 
@@ -65,14 +100,14 @@
               <img class="logo" src="../_static/carvoyant-logo.png" alt="Logo"/>
             </a></p>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../carvoyant-api/sorting-and-paging.html"
-                        title="previous chapter">Sorting and Paging</a></p>
+  <p class="topless"><a href="json-format-error.html"
+                        title="previous chapter">JSON Error Response Format</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../driver-dashboard/index.html"
-                        title="next chapter">Driver Dashboard</a></p>
+  <p class="topless"><a href="sorting-and-paging.html"
+                        title="next chapter">Sorting and Paging</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="../_sources/sandbox-api/index.txt"
+    <li><a href="../_sources/carvoyant-api/http-verbs.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -99,12 +134,13 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../driver-dashboard/index.html" title="Driver Dashboard"
+          <a href="sorting-and-paging.html" title="Sorting and Paging"
              >next</a> |</li>
         <li class="right" >
-          <a href="../carvoyant-api/sorting-and-paging.html" title="Sorting and Paging"
+          <a href="json-format-error.html" title="JSON Error Response Format"
              >previous</a> |</li>
-        <li><a href="../index.html">Carvoyant API 1.0 documentation</a> &raquo;</li> 
+        <li><a href="../index.html">Carvoyant API 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Carvoyant API</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

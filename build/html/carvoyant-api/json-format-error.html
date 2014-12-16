@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Sandbox API &mdash; Carvoyant API 1.0 documentation</title>
+    <title>JSON Error Response Format &mdash; Carvoyant API 1.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -24,8 +24,9 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Carvoyant API 1.0 documentation" href="../index.html" />
-    <link rel="next" title="Driver Dashboard" href="../driver-dashboard/index.html" />
-    <link rel="prev" title="Sorting and Paging" href="../carvoyant-api/sorting-and-paging.html" /> 
+    <link rel="up" title="Carvoyant API" href="index.html" />
+    <link rel="next" title="HTTP Verbs" href="http-verbs.html" />
+    <link rel="prev" title="JSON Success Response Format" href="json-format-success.html" /> 
   </head>
   <body>
     <div class="related">
@@ -35,12 +36,13 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../driver-dashboard/index.html" title="Driver Dashboard"
+          <a href="http-verbs.html" title="HTTP Verbs"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../carvoyant-api/sorting-and-paging.html" title="Sorting and Paging"
+          <a href="json-format-success.html" title="JSON Success Response Format"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Carvoyant API 1.0 documentation</a> &raquo;</li> 
+        <li><a href="../index.html">Carvoyant API 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Carvoyant API</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -49,10 +51,18 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="sandbox-api">
-<h1>Sandbox API<a class="headerlink" href="#sandbox-api" title="Permalink to this headline">¶</a></h1>
-<p>Bacon ipsum dolor amet in dolore ut meatloaf, irure magna pork loin commodo. Exercitation shank kielbasa consequat proident in laborum id, irure ground round deserunt flank swine in. Alcatra jowl laborum voluptate eiusmod. In meatloaf consectetur, brisket turkey excepteur filet mignon dolor biltong consequat jerky magna. Occaecat cupidatat pork chop tail. Et landjaeger deserunt andouille, jerky chuck porchetta.</p>
-<p>Frankfurter beef voluptate alcatra drumstick. Veniam irure aute sirloin porchetta, chicken jerky in kielbasa dolor. Frankfurter pig shank spare ribs corned beef, sausage tempor nostrud ullamco beef ribs ut eiusmod reprehenderit strip steak ham. Ipsum id nisi commodo nulla kevin.</p>
+  <div class="section" id="json-error-response-format">
+<h1>JSON Error Response Format<a class="headerlink" href="#json-error-response-format" title="Permalink to this headline">¶</a></h1>
+<p>API calls that result in an error will have a different format than successful message.  The first difference is that the HTTP response code will not be 200.  It will be an HTTP code more reflective of the error encountered.  For example, a 404 will be returned if a resource that does not exist is requested.  The body of the response will contain the following JSON response format::</p>
+<div class="highlight-python"><div class="highlight"><pre>{
+    &quot;error&quot;:
+        {
+            &quot;httpStatus&quot;: &lt;http status code&gt;,
+            &quot;detail&quot;: &quot;&lt;string message&gt;&quot;
+        }
+}
+</pre></div>
+</div>
 </div>
 
 
@@ -65,14 +75,14 @@
               <img class="logo" src="../_static/carvoyant-logo.png" alt="Logo"/>
             </a></p>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../carvoyant-api/sorting-and-paging.html"
-                        title="previous chapter">Sorting and Paging</a></p>
+  <p class="topless"><a href="json-format-success.html"
+                        title="previous chapter">JSON Success Response Format</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../driver-dashboard/index.html"
-                        title="next chapter">Driver Dashboard</a></p>
+  <p class="topless"><a href="http-verbs.html"
+                        title="next chapter">HTTP Verbs</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="../_sources/sandbox-api/index.txt"
+    <li><a href="../_sources/carvoyant-api/json-format-error.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -99,12 +109,13 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../driver-dashboard/index.html" title="Driver Dashboard"
+          <a href="http-verbs.html" title="HTTP Verbs"
              >next</a> |</li>
         <li class="right" >
-          <a href="../carvoyant-api/sorting-and-paging.html" title="Sorting and Paging"
+          <a href="json-format-success.html" title="JSON Success Response Format"
              >previous</a> |</li>
-        <li><a href="../index.html">Carvoyant API 1.0 documentation</a> &raquo;</li> 
+        <li><a href="../index.html">Carvoyant API 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Carvoyant API</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
