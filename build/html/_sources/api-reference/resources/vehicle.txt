@@ -114,30 +114,6 @@ Creates or updates a vehicle.
    |            | vehicle fields specified in the request will be updated. Unspecified fields will remain unchanged. |
    +------------+----------------------------------------------------------------------------------------------------+
 
-*Sample JSON Request*::
-
-   {  
-      "timestamp":"20140811T140444+0000",
-      "ignitionStatus":"ON",
-      "datum":[  
-         {  
-            "timestamp":"20140811T140444+0000",
-            "key":"GEN_WAYPOINT",
-            "value":"28.027065,-82.588619"
-         },
-         {  
-            "timestamp":"20140811T140444+0000",
-            "key":"GEN_HEADING",
-            "value":323
-         },
-         {  
-            "timestamp":"20140811T140444+0000",
-            "key":"GEN_VOLTAGE",
-            "value":"13.6"
-         }
-      ]
-   }
-
 DELETE
 ------
 
@@ -145,7 +121,7 @@ Deletes the specified vehicle.
 
 .. warning::
 
-   This operation is permanent! ALL data and configuration with the vehicle will be deleted and cannot be restored. Please ensure
+   This operation is permanent! All data and configuration for the vehicle will be deleted and cannot be restored. Please ensure
    that the Carvoyant account owner confirms this operation before making the API call.
    
 *Query Paths*

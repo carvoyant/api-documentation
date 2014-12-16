@@ -249,37 +249,13 @@ vehicle fields specified in the request will be updated. Unspecified fields will
 </tbody>
 </table>
 </div></blockquote>
-<p><em>Sample JSON Request</em>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-   <span class="s">&quot;timestamp&quot;</span><span class="p">:</span><span class="s">&quot;20140811T140444+0000&quot;</span><span class="p">,</span>
-   <span class="s">&quot;ignitionStatus&quot;</span><span class="p">:</span><span class="s">&quot;ON&quot;</span><span class="p">,</span>
-   <span class="s">&quot;datum&quot;</span><span class="p">:[</span>
-      <span class="p">{</span>
-         <span class="s">&quot;timestamp&quot;</span><span class="p">:</span><span class="s">&quot;20140811T140444+0000&quot;</span><span class="p">,</span>
-         <span class="s">&quot;key&quot;</span><span class="p">:</span><span class="s">&quot;GEN_WAYPOINT&quot;</span><span class="p">,</span>
-         <span class="s">&quot;value&quot;</span><span class="p">:</span><span class="s">&quot;28.027065,-82.588619&quot;</span>
-      <span class="p">},</span>
-      <span class="p">{</span>
-         <span class="s">&quot;timestamp&quot;</span><span class="p">:</span><span class="s">&quot;20140811T140444+0000&quot;</span><span class="p">,</span>
-         <span class="s">&quot;key&quot;</span><span class="p">:</span><span class="s">&quot;GEN_HEADING&quot;</span><span class="p">,</span>
-         <span class="s">&quot;value&quot;</span><span class="p">:</span><span class="mi">323</span>
-      <span class="p">},</span>
-      <span class="p">{</span>
-         <span class="s">&quot;timestamp&quot;</span><span class="p">:</span><span class="s">&quot;20140811T140444+0000&quot;</span><span class="p">,</span>
-         <span class="s">&quot;key&quot;</span><span class="p">:</span><span class="s">&quot;GEN_VOLTAGE&quot;</span><span class="p">,</span>
-         <span class="s">&quot;value&quot;</span><span class="p">:</span><span class="s">&quot;13.6&quot;</span>
-      <span class="p">}</span>
-   <span class="p">]</span>
-<span class="p">}</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="delete">
 <h2>DELETE<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h2>
 <p>Deletes the specified vehicle.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">This operation is permanent! ALL data and configuration with the vehicle will be deleted and cannot be restored. Please ensure
+<p class="last">This operation is permanent! All data and configuration for the vehicle will be deleted and cannot be restored. Please ensure
 that the Carvoyant account owner confirms this operation before making the API call.</p>
 </div>
 <p><em>Query Paths</em></p>
