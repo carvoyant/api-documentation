@@ -20,7 +20,7 @@ This resource represents a Trip within the Carvoyant system.  A Trip is defined 
 +---------------+-------------------------------+-----------------------------------------------------------------+
 | endWaypoint   | :doc:`../data-type/waypoint`  | The ending location of the trip if the trip is in not progress. |
 +---------------+-------------------------------+-----------------------------------------------------------------+
-| data          | :doc:`../data-set` Array      | An array of data sets collected during the trip.                |
+| data          | :doc:`data-set` Array         | An array of data sets collected during the trip.                |
 +---------------+-------------------------------+-----------------------------------------------------------------+
 
 *Supported Verbs*
