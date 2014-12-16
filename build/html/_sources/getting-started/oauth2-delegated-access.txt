@@ -1,7 +1,7 @@
 OAuth2 / Delegated Access
 =========================
 
-The Carvoyant system uses an `OAuth2 <http://tools.ietf.org/html/rfc6749>`_ implementation in order to allow users to delegate access to the applications that they want to use.  All four of the `Authorization Grant types <http://tools.ietf.org/html/rfc6749#section-1.3>`_have been implemented, however, only Authorization Code, Implicit and Client Credentials are available to our standard development partners.  If you need to support the Resource Owner type, please contact us to discuss.
+The Carvoyant system uses an `OAuth2 <http://tools.ietf.org/html/rfc6749>`_ implementation in order to allow users to delegate access to the applications that they want to use.  All four of the `Authorization Grant types <http://tools.ietf.org/html/rfc6749#section-1.3>`_ have been implemented, however, only Authorization Code, Implicit and Client Credentials are available to our standard development partners.  If you need to support the Resource Owner type, please contact us to discuss.
 
 Here is a brief summary of how you will use each of the grant types when accessing the Carvoyant system.  Please refer to the specification for details on each grant type.
 
