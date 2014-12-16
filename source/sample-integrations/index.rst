@@ -1,6 +1,11 @@
 Sample Integrations
 ===================
 
-Bacon ipsum dolor amet in dolore ut meatloaf, irure magna pork loin commodo. Exercitation shank kielbasa consequat proident in laborum id, irure ground round deserunt flank swine in. Alcatra jowl laborum voluptate eiusmod. In meatloaf consectetur, brisket turkey excepteur filet mignon dolor biltong consequat jerky magna. Occaecat cupidatat pork chop tail. Et landjaeger deserunt andouille, jerky chuck porchetta.
+In this section we will periodically post how-to's for connecting the Carvoyant platform to other systems.
 
-Frankfurter beef voluptate alcatra drumstick. Veniam irure aute sirloin porchetta, chicken jerky in kielbasa dolor. Frankfurter pig shank spare ribs corned beef, sausage tempor nostrud ullamco beef ribs ut eiusmod reprehenderit strip steak ham. Ipsum id nisi commodo nulla kevin.
+All of these integrations will use the Carvoyant Sandbox environment.  They all expect that the developer has created a Developer account, a Sandbox API key and a Carvoyant Sandbox User Account (with a vehicle on it).  Instructions for getting started can be found here.  Please be sure that your Sandbox environment is configured properly and that you are able to make API calls against the Carvoyant account.
+
+Force.com
+---------
+
+This example integration will use Vehicle location Event Subscriptions to update a map within a Force.com application.  View the how-to :doc:`here <force_com/force-com>`.

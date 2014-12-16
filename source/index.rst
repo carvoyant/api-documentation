@@ -24,14 +24,6 @@ API Overview
 	
 	api-overview/index
 
-Sandbox API
------------
-
-.. toctree::
-	:maxdepth: 2
-	
-	sandbox-api/index
-
 API Reference
 -------------
 
@@ -39,6 +31,14 @@ API Reference
    :maxdepth: 2
    
    api-reference/index
+
+Sandbox API
+-----------
+
+.. toctree::
+   :maxdepth: 2
+   
+   sandbox-api/index
 
 Driver Dashboard
 ----------------
