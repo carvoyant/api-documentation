@@ -204,6 +204,25 @@ Connection: keep-alive
 </div>
 <p>At this point, the development partners system would store the access token and refresh token and use them for future requests.</p>
 </div>
+<div class="section" id="using-the-access-token">
+<h3>Using the Access Token<a class="headerlink" href="#using-the-access-token" title="Permalink to this headline">¶</a></h3>
+<p>In all grants types, once the access token has been retrieved, calls into the Carvoyant system are done by passing the access token in the HTTP request within the Authorization header.  For example (using a sample access token from the Authorization Code grant type):</p>
+<p><em>Request</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl -i -H &quot;Authorization: Bearer dmnda67wbdnyayXXXXXXXXXX&quot; &quot;https://api.carvoyant.com/v1/api/vehicle/&quot;
+</pre></div>
+</div>
+<p><em>Response</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Date: Mon, 28 Apr 2014 15:06:47 GMT
+Server: Apache-Coyote/1.1
+X-Mashery-Responder: prod-j-worker-us-east-1b-36.mashery.com
+Content-Length: 1205
+Connection: keep-alive
+{&quot;vehicle&quot;:[{&quot;name&quot;:&quot;1999 Jeep Wrangler SE&quot;,&quot;label&quot;:&quot;Custom dune buggy&quot;,&quot;vehicleId&quot;:3,&quot;deviceId&quot;:&quot;C201200001&quot;,&quot;vin&quot;:&quot;1J4FY29P7XP442798&quot;,&quot;mileage&quot;:160854.0,&quot;lastWaypoint&quot;:{&quot;timestamp&quot;:&quot;20140428T144739+0000&quot;,&quot;latitude&quot;:28.036441,&quot;longitude&quot;:-82.593687},&quot;running&quot;:false,&quot;lastRunningTimestamp&quot;:&quot;20140428T113035+0000&quot;},{&quot;name&quot;:&quot;Unidentified Vehicle&quot;,&quot;label&quot;:null,&quot;vehicleId&quot;:4,&quot;deviceId&quot;:null,&quot;vin&quot;:null,&quot;mileage&quot;:162151.0,&quot;lastWaypoint&quot;:{&quot;timestamp&quot;:&quot;20131112T231526+0000&quot;,&quot;latitude&quot;:28.036473,&quot;longitude&quot;:-82.593671},&quot;running&quot;:false,&quot;lastRunningTimestamp&quot;:&quot;20131110T190222+0000&quot;},{&quot;name&quot;:&quot;2000 Chevrolet Corvette Hardtop&quot;,&quot;label&quot;:null,&quot;vehicleId&quot;:123,&quot;deviceId&quot;:&quot;4562001045&quot;,&quot;vin&quot;:&quot;1G1YY22G2Y5108919&quot;,&quot;mileage&quot;:111940.0,&quot;lastWaypoint&quot;:{&quot;timestamp&quot;:&quot;20140428T143141+0000&quot;,&quot;latitude&quot;:28.088404,&quot;longitude&quot;:-82.578463},&quot;running&quot;:false,&quot;lastRunningTimestamp&quot;:&quot;20140428T123141+0000&quot;},{&quot;name&quot;:&quot;2013 Subaru XV Crosstrek Limited&quot;,&quot;label&quot;:null,&quot;vehicleId&quot;:284,&quot;deviceId&quot;:&quot;C201200002&quot;,&quot;vin&quot;:&quot;JF2GPAKC5D2889395&quot;,&quot;mileage&quot;:9156.0,&quot;lastWaypoint&quot;:{&quot;timestamp&quot;:&quot;20140428T142731+0000&quot;,&quot;latitude&quot;:27.991497,&quot;longitude&quot;:-82.406288},&quot;running&quot;:false,&quot;lastRunningTimestamp&quot;:&quot;20140428T111028+0000&quot;}],&quot;totalRecords&quot;:4,&quot;actions&quot;:[]}
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -223,6 +242,7 @@ Connection: keep-alive
 <li><a class="reference internal" href="#id1">Authorization Code</a></li>
 <li><a class="reference internal" href="#id2">Implicit</a></li>
 <li><a class="reference internal" href="#id3">Client Credentials</a></li>
+<li><a class="reference internal" href="#using-the-access-token">Using the Access Token</a></li>
 </ul>
 </li>
 </ul>
