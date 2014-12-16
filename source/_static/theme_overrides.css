@@ -1,3 +1,8 @@
+/* override colors */
+html body .wy-side-nav-search {
+	background-color: #3261a1;
+}
+
 /* override table width restrictions */
 html body .wy-table-responsive table td, .wy-table-responsive table th {
     white-space: normal;
