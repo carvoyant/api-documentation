@@ -10,6 +10,7 @@
     
     <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -24,9 +25,9 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="top" title="Carvoyant API 1.0 documentation" href="../../index.html" />
-    <link rel="up" title="API Reference" href="../index.html" />
+    <link rel="up" title="Resources" href="../resources.html" />
     <link rel="next" title="DataSet" href="data-set.html" />
-    <link rel="prev" title="Waypoint" href="../data-type/waypoint.html" /> 
+    <link rel="prev" title="Resources" href="../resources.html" /> 
   </head>
   <body>
     <div class="related">
@@ -39,10 +40,11 @@
           <a href="data-set.html" title="DataSet"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../data-type/waypoint.html" title="Waypoint"
+          <a href="../resources.html" title="Resources"
              accesskey="P">previous</a> |</li>
         <li><a href="../../index.html">Carvoyant API 1.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" accesskey="U">API Reference</a> &raquo;</li> 
+          <li><a href="../index.html" >API Reference</a> &raquo;</li>
+          <li><a href="../resources.html" accesskey="U">Resources</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -53,6 +55,94 @@
             
   <div class="section" id="datapoint">
 <h1>DataPoint<a class="headerlink" href="#datapoint" title="Permalink to this headline">¶</a></h1>
+<p>Represents a data point collected from a vehicle.</p>
+<p><em>Properties</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="19%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>Integer</td>
+<td>The internal system identifier for this data point.</td>
+</tr>
+<tr class="row-odd"><td>timestamp</td>
+<td><a class="reference internal" href="../data-type/date-time.html"><em>DateTime</em></a></td>
+<td>The time that the data point was collected.</td>
+</tr>
+<tr class="row-even"><td>key</td>
+<td><a class="reference internal" href="../data-type/data-key.html"><em>DataKey</em></a></td>
+<td>The type of data collected.</td>
+</tr>
+<tr class="row-odd"><td>value</td>
+<td>String</td>
+<td>The raw value collected from the vehicle.</td>
+</tr>
+<tr class="row-even"><td>translatedValue</td>
+<td>String</td>
+<td>The value collected translated into human understandable form. This should only be used for display purposes.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="get">
+<h2>GET<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h2>
+<p>Returns raw vehicle data for the specified vehicle.  By default, the first 50 results are returned.</p>
+<p><strong>Query Paths</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>/vehicle/{vehicle-id}/data/</li>
+<li>/vehicle/{vehicle-id}/data/?key={key-id}</li>
+<li>/vehicle/{vehicle-id}/data/?mostRecentOnly=true</li>
+</ul>
+</div></blockquote>
+<p><strong>Query Parameters</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>key</td>
+<td>Allows only specific data types to be returned. See DataKey for the allowable types.</td>
+</tr>
+<tr class="row-odd"><td>mostRecentOnly</td>
+<td>If this is present, only the most recently collected data point for each type will be returned.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>Call Options</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="67%" />
+<col width="33%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Sortable</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>Pagable</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
 </div>
 
 
@@ -64,9 +154,17 @@
             <p class="logo"><a href="../../index.html">
               <img class="logo" src="../../_static/carvoyant-logo.png" alt="Logo"/>
             </a></p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">DataPoint</a><ul>
+<li><a class="reference internal" href="#get">GET</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../data-type/waypoint.html"
-                        title="previous chapter">Waypoint</a></p>
+  <p class="topless"><a href="../resources.html"
+                        title="previous chapter">Resources</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="data-set.html"
                         title="next chapter">DataSet</a></p>
@@ -102,10 +200,11 @@
           <a href="data-set.html" title="DataSet"
              >next</a> |</li>
         <li class="right" >
-          <a href="../data-type/waypoint.html" title="Waypoint"
+          <a href="../resources.html" title="Resources"
              >previous</a> |</li>
         <li><a href="../../index.html">Carvoyant API 1.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >API Reference</a> &raquo;</li> 
+          <li><a href="../index.html" >API Reference</a> &raquo;</li>
+          <li><a href="../resources.html" >Resources</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
