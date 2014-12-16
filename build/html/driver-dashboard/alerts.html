@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Alerts &mdash; Carvoyant API 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Carvoyant API 1.0 documentation" href="../index.html" />
+    <link rel="up" title="Driver Dashboard" href="index.html" />
+    <link rel="next" title="Applications" href="applications.html" />
+    <link rel="prev" title="Trips" href="trips.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="applications.html" title="Applications"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="trips.html" title="Trips"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Carvoyant API 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Driver Dashboard</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="alerts">
+<h1>Alerts<a class="headerlink" href="#alerts" title="Permalink to this headline">¶</a></h1>
+<p>The Carvoyant system can notify users when different types of events occur.  These are referred to as Alerts within the Driver Dashboard.  This example has one ignition status alert set up for the vehicle:</p>
+<img alt="../_images/driverdash-alerts.png" src="../_images/driverdash-alerts.png" />
+<p>After selecting a subscription, you will see a list of any notifications that have been sent for it. Selecting a notification will display details of the alert.</p>
+<p>The following alerts can be created:</p>
+<blockquote>
+<div><ul class="simple">
+<li>GeoFence - This alert will let you monitor the location where your vehicles are travelling.</li>
+<li>Ignition Status - This alert monitors whether the vehicle is on or off.</li>
+<li>Low Battery - This alert indicates that the battery voltage has dropped below 12.0 volts.</li>
+<li>Numeric Data Key - This alert lets you monitor any numeric data element (for example, when engine temperature has gone over a certain value).</li>
+<li>Time of Day - This alert lets you monitor the time of day that a vehicle is being used. Note that the alert checks for vehicle activity outside the specified values.</li>
+<li>Trouble Code - This alert monitors for any trouble codes that the vehicle throws.</li>
+</ul>
+</div></blockquote>
+<p>When configuring an alert, the following properties can be selected for each alert type:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="9%" />
+<col width="16%" />
+<col width="12%" />
+<col width="17%" />
+<col width="12%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">GeoFence</th>
+<th class="head">Ignition Status</th>
+<th class="head">Low Battery</th>
+<th class="head">Numeric Data Key</th>
+<th class="head">Time of Day</th>
+<th class="head">Trouble Code</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Minimum Notification
+Interval</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr class="row-odd"><td>Notification Period</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr class="row-even"><td>Recipients</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr class="row-odd"><td>Location Map</td>
+<td>X</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Radius</td>
+<td>X</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Ignition Status</td>
+<td>X</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Boundary Condition</td>
+<td>X</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Data Key</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>X</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Threshold Value</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>X</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Relationship</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>X</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Start Time</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>X</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>End Time</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>X</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Days of Week</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>X</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Property Descriptions</strong></p>
+<p><em>Minimum Notification Interval</em></p>
+<p>This is the minimum time between alerts in minutes. If you set this value to 60, you will only receive onealert every 60 minutes even it the event occurs more frequently.</p>
+<p><em>Notification Period</em></p>
+<p>This describes when the alert will be checked. Possible values are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Initial State - Only when the conditions are first met</li>
+<li>One Time - Only when the conditions are first met, and then the alert is delete (subsequent events will not alert you)</li>
+<li>Continuious - Alerts will be sent every time the Carvoyant system collects data that meet the alerts criteria</li>
+<li>State Change - Alerts will be sent when the criteria is first met, and then when the criteria is no longer met</li>
+</ul>
+</div></blockquote>
+<p><em>Recipients</em></p>
+<p>The recipients of the alerts. Currently we support Email and Glympse. Email will send a simple email to the addresses listed. Glympse is an integration with the Glympse service and is currently in beta.</p>
+<p><em>Location Map</em></p>
+<p>Select a location on the map.</p>
+<p><em>Radius</em></p>
+<p>The distance from a point on the map. This is in miles but can be partial (for example, 0.2).</p>
+<p><em>Ignition Status</em></p>
+<p>This can be one of three values:</p>
+<blockquote>
+<div><ul class="simple">
+<li>On - When the vehicle is first turned on</li>
+<li>Off - When the vehicles is turned off</li>
+<li>Running - Any time the vehicle is running</li>
+</ul>
+</div></blockquote>
+<p><em>Boundary Condition</em></p>
+<p>This can be one of two values:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Inside: The geofence is triggered when the vehicle is within the radius of the specified location</li>
+<li>Outside: The geofence is triggered when the vehicle is outside the radius of the specified location</li>
+</ul>
+</div></blockquote>
+<p><em>Data Key</em></p>
+<p>Specified what data key type to monitor.</p>
+<p><em>Threshold Value</em></p>
+<p>The value of the recorded data key to check against.</p>
+<p><em>Relationship</em></p>
+<p>This can be one of three values:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Above - The recorded data is above the threshold value</li>
+<li>Below - The recorded data is below the threshold value</li>
+<li>Equals - The recorded data equals the threshold value</li>
+</ul>
+</div></blockquote>
+<p><em>Start Time</em></p>
+<p>The start time of the allowed window.</p>
+<p><em>End Time</em></p>
+<p>The end time of the allowed window.</p>
+<p><em>Days of Week</em></p>
+<p>The days of the week for the allowed window.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/carvoyant-logo.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="trips.html"
+                        title="previous chapter">Trips</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="applications.html"
+                        title="next chapter">Applications</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/driver-dashboard/alerts.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="applications.html" title="Applications"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="trips.html" title="Trips"
+             >previous</a> |</li>
+        <li><a href="../index.html">Carvoyant API 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Driver Dashboard</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Matt Galvin, Ronnie Williams.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
