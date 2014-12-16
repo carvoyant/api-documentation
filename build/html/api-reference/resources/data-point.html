@@ -92,10 +92,14 @@
 </tr>
 </tbody>
 </table>
-<div class="section" id="supported-verbs">
-<h2>Supported Verbs<a class="headerlink" href="#supported-verbs" title="Permalink to this headline">¶</a></h2>
+<p><em>Supported Verbs</em></p>
+<blockquote>
+<div><ul class="simple">
+<li>GET</li>
+</ul>
+</div></blockquote>
 <div class="section" id="get">
-<h3>GET<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h3>
+<h2>GET<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h2>
 <p>Returns raw vehicle data for the specified vehicle.  By default, the first 50 results are returned.</p>
 <p><em>Query Paths</em></p>
 <blockquote>
@@ -131,15 +135,15 @@
 <blockquote>
 <div><table border="1" class="docutils">
 <colgroup>
-<col width="69%" />
-<col width="31%" />
+<col width="14%" />
+<col width="86%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td>Sortable</td>
-<td>Yes</td>
+<td><a class="reference internal" href="../../api-overview/sorting-and-paging.html"><em>Yes</em></a> (by timestamp)</td>
 </tr>
 <tr class="row-even"><td>Pageable</td>
-<td>Yes</td>
+<td><a class="reference internal" href="../../api-overview/sorting-and-paging.html"><em>Yes</em></a></td>
 </tr>
 </tbody>
 </table>
@@ -160,41 +164,19 @@
             <span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;GEN_VOLTAGE&quot;</span><span class="p">,</span>
             <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;12.6&quot;</span><span class="p">,</span>
             <span class="s">&quot;translatedValue&quot;</span><span class="p">:</span> <span class="s">&quot;12.6V&quot;</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">8725166</span><span class="p">,</span>
-            <span class="s">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s">&quot;20140116T173113+0000&quot;</span><span class="p">,</span>
-            <span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;GEN_WAYPOINT&quot;</span><span class="p">,</span>
-            <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;28.088359,-82.578377&quot;</span><span class="p">,</span>
-            <span class="s">&quot;translatedValue&quot;</span><span class="p">:</span> <span class="s">&quot;28.088359,-82.578377&quot;</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">8725167</span><span class="p">,</span>
-            <span class="s">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s">&quot;20140116T173113+0000&quot;</span><span class="p">,</span>
-            <span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;GEN_VOLTAGE&quot;</span><span class="p">,</span>
-            <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;12.6&quot;</span><span class="p">,</span>
-            <span class="s">&quot;translatedValue&quot;</span><span class="p">:</span> <span class="s">&quot;12.6V&quot;</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">8722250</span><span class="p">,</span>
-            <span class="s">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s">&quot;20140116T162532+0000&quot;</span><span class="p">,</span>
-            <span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;GEN_WAYPOINT&quot;</span><span class="p">,</span>
-            <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;28.088359,-82.578459&quot;</span><span class="p">,</span>
-            <span class="s">&quot;translatedValue&quot;</span><span class="p">:</span> <span class="s">&quot;28.088359,-82.578459&quot;</span>
         <span class="p">}</span>
     <span class="p">],</span>
     <span class="s">&quot;totalRecords&quot;</span><span class="p">:</span> <span class="mi">65070</span><span class="p">,</span>
     <span class="s">&quot;actions&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;next&quot;</span><span class="p">,</span>
-            <span class="s">&quot;uri&quot;</span><span class="p">:</span> <span class="s">&quot;https://api.carvoyant.com/v1/api/vehicle/C201200001/data/?sortOrder=desc&amp;searchOffset=5&amp;searchLimit=5&quot;</span><span class="p">,</span>
+            <span class="s">&quot;uri&quot;</span><span class="p">:</span> <span class="s">&quot;https://api.carvoyant.com/v1/api/vehicle/C201200001/data/?sortOrder=desc&amp;searchOffset=2&amp;searchLimit=2&quot;</span><span class="p">,</span>
             <span class="s">&quot;methods&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
             <span class="s">&quot;inputs&quot;</span><span class="p">:</span> <span class="n">null</span>
         <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -211,10 +193,7 @@
   <h3><a href="../../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">DataPoint</a><ul>
-<li><a class="reference internal" href="#supported-verbs">Supported Verbs</a><ul>
 <li><a class="reference internal" href="#get">GET</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>

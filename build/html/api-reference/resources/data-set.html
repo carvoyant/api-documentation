@@ -10,6 +10,7 @@
     
     <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -24,7 +25,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="top" title="Carvoyant API 1.0 documentation" href="../../index.html" />
-    <link rel="up" title="API Reference" href="../index.html" />
+    <link rel="up" title="Resources" href="../resources.html" />
     <link rel="next" title="Trip" href="trip.html" />
     <link rel="prev" title="DataPoint" href="data-point.html" /> 
   </head>
@@ -42,7 +43,8 @@
           <a href="data-point.html" title="DataPoint"
              accesskey="P">previous</a> |</li>
         <li><a href="../../index.html">Carvoyant API 1.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" accesskey="U">API Reference</a> &raquo;</li> 
+          <li><a href="../index.html" >API Reference</a> &raquo;</li>
+          <li><a href="../resources.html" accesskey="U">Resources</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -53,6 +55,180 @@
             
   <div class="section" id="dataset">
 <h1>DataSet<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h1>
+<p>A DataSet is a collection of :doc:<a href="#id1"><span class="problematic" id="id2">`</span></a>data-point`s taken at the same time.  For example, a DataSet may contain a speed value, a battery voltage value and a GPS location.  It should be assumed that the DataPoints are related and were collected at the same time. This allows you to correlate different DataPoints with each other.</p>
+<p><em>Properties</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="29%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>Integer</td>
+<td>The internal system identifier for this data set.</td>
+</tr>
+<tr class="row-odd"><td>timestamp</td>
+<td><a class="reference internal" href="../data-type/date-time.html"><em>DateTime</em></a></td>
+<td>The time that the DataSet was created.</td>
+</tr>
+<tr class="row-even"><td>datum</td>
+<td><a class="reference internal" href="data-point.html"><em>DataPoint</em></a></td>
+<td>The :doc:<a href="#id3"><span class="problematic" id="id4">`</span></a>data-point`s contained within this DataSet.</td>
+</tr>
+<tr class="row-odd"><td>ignitionStatus</td>
+<td>String Enumeration
+ON
+OFF
+RUNNING</td>
+<td>The state of the vehicle when this DataSet was collected.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Supported Verbs</em></p>
+<blockquote>
+<div><ul class="simple">
+<li>GET</li>
+<li>POST</li>
+</ul>
+</div></blockquote>
+<div class="section" id="get">
+<h2>GET<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h2>
+<p>Returns data sets for the specified vehicle.  By default, the first 50 results are returned.</p>
+<p><em>Query Paths</em></p>
+<blockquote>
+<div><ul class="simple">
+<li>/vehicle/{vehicle-id}/dataSet/</li>
+</ul>
+</div></blockquote>
+<p><em>Call Options</em></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Sortable</td>
+<td><a class="reference internal" href="../../api-overview/sorting-and-paging.html"><em>Yes</em></a> (by timestamp)</td>
+</tr>
+<tr class="row-even"><td>Pageable</td>
+<td><a class="reference internal" href="../../api-overview/sorting-and-paging.html"><em>Yes</em></a></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><em>Sample JSON Response</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;dataSet&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1187922</span><span class="p">,</span>
+            <span class="s">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s">&quot;19991130T000000+0000&quot;</span><span class="p">,</span>
+            <span class="s">&quot;datum&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">4562158</span><span class="p">,</span>
+                    <span class="s">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s">&quot;19991130T000000+0000&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;GEN_WAYPOINT&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;0.000000,0.000000&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;translatedValue&quot;</span><span class="p">:</span> <span class="s">&quot;0.000000,0.000000&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">4562160</span><span class="p">,</span>
+                    <span class="s">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s">&quot;19991130T000000+0000&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;GEN_VOLTAGE&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;13.9&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;translatedValue&quot;</span><span class="p">:</span> <span class="s">&quot;13.9V&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">4562163</span><span class="p">,</span>
+                    <span class="s">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s">&quot;19991130T000000+0000&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;GEN_FUELRATE&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;0.0&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;translatedValue&quot;</span><span class="p">:</span> <span class="s">&quot;0.0 gph&quot;</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1562501</span><span class="p">,</span>
+            <span class="s">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s">&quot;19991130T000000+0000&quot;</span><span class="p">,</span>
+            <span class="s">&quot;datum&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">6223164</span><span class="p">,</span>
+                    <span class="s">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s">&quot;19991130T000000+0000&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;GEN_WAYPOINT&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;0.000000,0.000000&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;translatedValue&quot;</span><span class="p">:</span> <span class="s">&quot;0.000000,0.000000&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">6223165</span><span class="p">,</span>
+                    <span class="s">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s">&quot;19991130T000000+0000&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;GEN_VOLTAGE&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;13.9&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;translatedValue&quot;</span><span class="p">:</span> <span class="s">&quot;13.9V&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">6223167</span><span class="p">,</span>
+                    <span class="s">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s">&quot;19991130T000000+0000&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;GEN_FUELLEVEL&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;0&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;translatedValue&quot;</span><span class="p">:</span> <span class="s">&quot;0 %&quot;</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s">&quot;totalRecords&quot;</span><span class="p">:</span> <span class="mi">23893</span><span class="p">,</span>
+    <span class="s">&quot;actions&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;next&quot;</span><span class="p">,</span>
+            <span class="s">&quot;uri&quot;</span><span class="p">:</span> <span class="s">&quot;https://api.carvoyant.com/v1/api/vehicle/C201200001/dataSet/?searchOffset=2&amp;searchLimit=2&quot;</span><span class="p">,</span>
+            <span class="s">&quot;methods&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;inputs&quot;</span><span class="p">:</span> <span class="n">null</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="post">
+<h2>POST<a class="headerlink" href="#post" title="Permalink to this headline">¶</a></h2>
+<p>Saves the data set to the specified vehicle. Note that in the production environment, this is a restricted call that only certain partners are authorized to use. If you feel you need to make calls to this endpoint, please <a class="reference external" href="mailto://support&#37;&#52;&#48;carvoyant&#46;com">contact us</a> . In the sandbox environment, this is available for everyone.</p>
+<p><em>Query Paths</em></p>
+<blockquote>
+<div><ul class="simple">
+<li>/vehicle/{vehicle-id}/dataSet/</li>
+</ul>
+</div></blockquote>
+<p><em>Sample JSON Request</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+   <span class="s">&quot;timestamp&quot;</span><span class="p">:</span><span class="s">&quot;20140811T140444+0000&quot;</span><span class="p">,</span>
+   <span class="s">&quot;ignitionStatus&quot;</span><span class="p">:</span><span class="s">&quot;ON&quot;</span><span class="p">,</span>
+   <span class="s">&quot;datum&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="s">&quot;timestamp&quot;</span><span class="p">:</span><span class="s">&quot;20140811T140444+0000&quot;</span><span class="p">,</span>
+         <span class="s">&quot;key&quot;</span><span class="p">:</span><span class="s">&quot;GEN_WAYPOINT&quot;</span><span class="p">,</span>
+         <span class="s">&quot;value&quot;</span><span class="p">:</span><span class="s">&quot;28.027065,-82.588619&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="s">&quot;timestamp&quot;</span><span class="p">:</span><span class="s">&quot;20140811T140444+0000&quot;</span><span class="p">,</span>
+         <span class="s">&quot;key&quot;</span><span class="p">:</span><span class="s">&quot;GEN_HEADING&quot;</span><span class="p">,</span>
+         <span class="s">&quot;value&quot;</span><span class="p">:</span><span class="mi">323</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="s">&quot;timestamp&quot;</span><span class="p">:</span><span class="s">&quot;20140811T140444+0000&quot;</span><span class="p">,</span>
+         <span class="s">&quot;key&quot;</span><span class="p">:</span><span class="s">&quot;GEN_VOLTAGE&quot;</span><span class="p">,</span>
+         <span class="s">&quot;value&quot;</span><span class="p">:</span><span class="s">&quot;13.6&quot;</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -64,6 +240,15 @@
             <p class="logo"><a href="../../index.html">
               <img class="logo" src="../../_static/carvoyant-logo.png" alt="Logo"/>
             </a></p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">DataSet</a><ul>
+<li><a class="reference internal" href="#get">GET</a></li>
+<li><a class="reference internal" href="#post">POST</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="data-point.html"
                         title="previous chapter">DataPoint</a></p>
@@ -105,7 +290,8 @@
           <a href="data-point.html" title="DataPoint"
              >previous</a> |</li>
         <li><a href="../../index.html">Carvoyant API 1.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >API Reference</a> &raquo;</li> 
+          <li><a href="../index.html" >API Reference</a> &raquo;</li>
+          <li><a href="../resources.html" >Resources</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

@@ -19,11 +19,12 @@ Represents a data point collected from a vehicle.
 | translatedValue | String                        | The value collected translated into human understandable form. This should only be used for display purposes. |
 +-----------------+-------------------------------+---------------------------------------------------------------------------------------------------------------+
 
-Supported Verbs
----------------
+*Supported Verbs*
+
+   * GET
 
 GET
-~~~
+---
 
 Returns raw vehicle data for the specified vehicle.  By default, the first 50 results are returned.
 
@@ -45,12 +46,12 @@ Returns raw vehicle data for the specified vehicle.  By default, the first 50 re
 
 *Call Options*
 
-   +-----------+-----+
-   | Sortable  | Yes |
-   +-----------+-----+
-   | Pageable  | Yes |
-   +-----------+-----+
-   
+   +----------+--------------------------------------------------------------+
+   | Sortable | :doc:`Yes </api-overview/sorting-and-paging>` (by timestamp) |
+   +----------+--------------------------------------------------------------+
+   | Pageable | :doc:`Yes </api-overview/sorting-and-paging>`                |
+   +----------+--------------------------------------------------------------+
+
 *Sample JSON Response*::
 
    {
@@ -68,34 +69,13 @@ Returns raw vehicle data for the specified vehicle.  By default, the first 50 re
                "key": "GEN_VOLTAGE",
                "value": "12.6",
                "translatedValue": "12.6V"
-           },
-           {
-               "id": 8725166,
-               "timestamp": "20140116T173113+0000",
-               "key": "GEN_WAYPOINT",
-               "value": "28.088359,-82.578377",
-               "translatedValue": "28.088359,-82.578377"
-           },
-           {
-               "id": 8725167,
-               "timestamp": "20140116T173113+0000",
-               "key": "GEN_VOLTAGE",
-               "value": "12.6",
-               "translatedValue": "12.6V"
-           },
-           {
-               "id": 8722250,
-               "timestamp": "20140116T162532+0000",
-               "key": "GEN_WAYPOINT",
-               "value": "28.088359,-82.578459",
-               "translatedValue": "28.088359,-82.578459"
            }
        ],
        "totalRecords": 65070,
        "actions": [
            {
                "name": "next",
-               "uri": "https://api.carvoyant.com/v1/api/vehicle/C201200001/data/?sortOrder=desc&searchOffset=5&searchLimit=5",
+               "uri": "https://api.carvoyant.com/v1/api/vehicle/C201200001/data/?sortOrder=desc&searchOffset=2&searchLimit=2",
                "methods": null,
                "inputs": null
            }
