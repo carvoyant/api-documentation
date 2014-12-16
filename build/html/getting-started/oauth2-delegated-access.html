@@ -91,6 +91,32 @@ development partners credentials.</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p><strong>Configuration Requirements</strong></p>
+<p>In order to ensure the security of the OAuth2 process, there are two requirements that must be met. When you registered your application, one of the fields that you were asked for was the &#8220;Register Callback URL&#8221;.  This is the URL that the OAuth2 process will redirect users back to after they authorize your application.  Specifically, it is the value of the redirect_uri in all of the below examples.  There are two important aspects to this</p>
+<ol class="arabic simple">
+<li>The value MUST be an SSL protected URL of the form <a class="reference external" href="https://">https://</a>... and the certificate must be signed by a trusted certificate authority (ie, self signed certificates are not supported).</li>
+<li>All requests that are made into the OAuth2 process must use that value for the redirect_uri. Mismatched values will generate errors and will result in an access token not being generated.</li>
+</ol>
+<p class="last">If you need to change this value, or are unsure of what it is set to, you can access it by logging into the <a class="reference external" href="https://developer.carvoyant.com/">Developer Console</a> and selecting &#8220;My Account&#8221; in the top right.  This will let you access any applications that you have created keys for.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>Below are example calls using cURL to show how to generate tokens under each grant type.</p>
+<div class="section" id="id3">
+<h3>Authorization Code<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>The first step is to request the authorization from the user. This call will return a redirect to the login page.</p>
+</div>
+<div class="section" id="id4">
+<h3>Implicit<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>The first step is to request the authorization from the user. This call will return a redirect to the login page.</p>
+</div>
+<div class="section" id="id5">
+<h3>Client Credentials<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>In this grant type, there is no user interaction. The development partner requests a token for their client credentials directly.</p>
+</div>
+</div>
 </div>
 
 
@@ -102,6 +128,19 @@ development partners credentials.</td>
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/carvoyant-logo.png" alt="Logo"/>
             </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">OAuth2 / Delegated Access</a><ul>
+<li><a class="reference internal" href="#examples">Examples</a><ul>
+<li><a class="reference internal" href="#id3">Authorization Code</a></li>
+<li><a class="reference internal" href="#id4">Implicit</a></li>
+<li><a class="reference internal" href="#id5">Client Credentials</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
                         title="previous chapter">Getting Started</a></p>

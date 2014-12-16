@@ -29,3 +29,32 @@ Here is a brief summary of how you will use each of the grant types when accessi
 |                                                                                         | development partners credentials.                                                                                                   |
 +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 
+.. warning::
+   **Configuration Requirements**
+
+   In order to ensure the security of the OAuth2 process, there are two requirements that must be met. When you registered your application, one of the fields that you were asked for was the "Register Callback URL".  This is the URL that the OAuth2 process will redirect users back to after they authorize your application.  Specifically, it is the value of the redirect_uri in all of the below examples.  There are two important aspects to this
+
+   #. The value MUST be an SSL protected URL of the form https://... and the certificate must be signed by a trusted certificate authority (ie, self signed certificates are not supported).
+   #. All requests that are made into the OAuth2 process must use that value for the redirect_uri. Mismatched values will generate errors and will result in an access token not being generated.
+   
+   If you need to change this value, or are unsure of what it is set to, you can access it by logging into the `Developer Console <https://developer.carvoyant.com/>`_ and selecting "My Account" in the top right.  This will let you access any applications that you have created keys for.
+   
+Examples
+--------
+
+Below are example calls using cURL to show how to generate tokens under each grant type.
+
+Authorization Code
+~~~~~~~~~~~~~~~~~~
+
+The first step is to request the authorization from the user. This call will return a redirect to the login page.
+
+Implicit
+~~~~~~~~
+
+The first step is to request the authorization from the user. This call will return a redirect to the login page.
+
+Client Credentials
+~~~~~~~~~~~~~~~~~~
+
+In this grant type, there is no user interaction. The development partner requests a token for their client credentials directly.
