@@ -50,13 +50,14 @@ When configuring an alert, the following properties can be selected for each ale
 | Days of Week         |          |          |         |          | X           |         |
 +----------------------+----------+----------+---------+----------+-------------+---------+
 
-**Property Descriptions**
+Property Descriptions
+---------------------
 
-*Minimum Notification Interval*
+**Minimum Notification Interval**
 
 This is the minimum time between alerts in minutes. If you set this value to 60, you will only receive onealert every 60 minutes even it the event occurs more frequently.
 
-*Notification Period*
+**Notification Period**
 
 This describes when the alert will be checked. Possible values are:
 
@@ -65,19 +66,19 @@ This describes when the alert will be checked. Possible values are:
    * Continuious - Alerts will be sent every time the Carvoyant system collects data that meet the alerts criteria
    * State Change - Alerts will be sent when the criteria is first met, and then when the criteria is no longer met
 
-*Recipients*
+**Recipients**
 
 The recipients of the alerts. Currently we support Email and Glympse. Email will send a simple email to the addresses listed. Glympse is an integration with the Glympse service and is currently in beta.
 
-*Location Map*
+**Location Map**
 
 Select a location on the map.
 
-*Radius*
+**Radius**
 
 The distance from a point on the map. This is in miles but can be partial (for example, 0.2).
 
-*Ignition Status*
+**Ignition Status**
 
 This can be one of three values:
 
@@ -85,22 +86,22 @@ This can be one of three values:
    * Off - When the vehicles is turned off
    * Running - Any time the vehicle is running
 
-*Boundary Condition*
+**Boundary Condition**
 
 This can be one of two values:
 
    * Inside: The geofence is triggered when the vehicle is within the radius of the specified location
    * Outside: The geofence is triggered when the vehicle is outside the radius of the specified location
 
-*Data Key*
+**Data Key**
 
 Specified what data key type to monitor.
 
-*Threshold Value*
+**Threshold Value**
 
 The value of the recorded data key to check against.
 
-*Relationship*
+**Relationship**
 
 This can be one of three values:
 
@@ -108,15 +109,15 @@ This can be one of three values:
    * Below - The recorded data is below the threshold value
    * Equals - The recorded data equals the threshold value
 
-*Start Time*
+**Start Time**
 
 The start time of the allowed window.
 
-*End Time*
+**End Time**
 
 The end time of the allowed window.
 
-*Days of Week*
+**Days of Week**
 
 The days of the week for the allowed window.
 

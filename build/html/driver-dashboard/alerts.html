@@ -201,10 +201,11 @@ Interval</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Property Descriptions</strong></p>
-<p><em>Minimum Notification Interval</em></p>
+<div class="section" id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Permalink to this headline">¶</a></h2>
+<p><strong>Minimum Notification Interval</strong></p>
 <p>This is the minimum time between alerts in minutes. If you set this value to 60, you will only receive onealert every 60 minutes even it the event occurs more frequently.</p>
-<p><em>Notification Period</em></p>
+<p><strong>Notification Period</strong></p>
 <p>This describes when the alert will be checked. Possible values are:</p>
 <blockquote>
 <div><ul class="simple">
@@ -214,13 +215,13 @@ Interval</td>
 <li>State Change - Alerts will be sent when the criteria is first met, and then when the criteria is no longer met</li>
 </ul>
 </div></blockquote>
-<p><em>Recipients</em></p>
+<p><strong>Recipients</strong></p>
 <p>The recipients of the alerts. Currently we support Email and Glympse. Email will send a simple email to the addresses listed. Glympse is an integration with the Glympse service and is currently in beta.</p>
-<p><em>Location Map</em></p>
+<p><strong>Location Map</strong></p>
 <p>Select a location on the map.</p>
-<p><em>Radius</em></p>
+<p><strong>Radius</strong></p>
 <p>The distance from a point on the map. This is in miles but can be partial (for example, 0.2).</p>
-<p><em>Ignition Status</em></p>
+<p><strong>Ignition Status</strong></p>
 <p>This can be one of three values:</p>
 <blockquote>
 <div><ul class="simple">
@@ -229,7 +230,7 @@ Interval</td>
 <li>Running - Any time the vehicle is running</li>
 </ul>
 </div></blockquote>
-<p><em>Boundary Condition</em></p>
+<p><strong>Boundary Condition</strong></p>
 <p>This can be one of two values:</p>
 <blockquote>
 <div><ul class="simple">
@@ -237,11 +238,11 @@ Interval</td>
 <li>Outside: The geofence is triggered when the vehicle is outside the radius of the specified location</li>
 </ul>
 </div></blockquote>
-<p><em>Data Key</em></p>
+<p><strong>Data Key</strong></p>
 <p>Specified what data key type to monitor.</p>
-<p><em>Threshold Value</em></p>
+<p><strong>Threshold Value</strong></p>
 <p>The value of the recorded data key to check against.</p>
-<p><em>Relationship</em></p>
+<p><strong>Relationship</strong></p>
 <p>This can be one of three values:</p>
 <blockquote>
 <div><ul class="simple">
@@ -250,12 +251,13 @@ Interval</td>
 <li>Equals - The recorded data equals the threshold value</li>
 </ul>
 </div></blockquote>
-<p><em>Start Time</em></p>
+<p><strong>Start Time</strong></p>
 <p>The start time of the allowed window.</p>
-<p><em>End Time</em></p>
+<p><strong>End Time</strong></p>
 <p>The end time of the allowed window.</p>
-<p><em>Days of Week</em></p>
+<p><strong>Days of Week</strong></p>
 <p>The days of the week for the allowed window.</p>
+</div>
 </div>
 
 
@@ -267,6 +269,14 @@ Interval</td>
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/carvoyant-logo.png" alt="Logo"/>
             </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Alerts</a><ul>
+<li><a class="reference internal" href="#property-descriptions">Property Descriptions</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="trips.html"
                         title="previous chapter">Trips</a></p>
