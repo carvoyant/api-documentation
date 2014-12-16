@@ -16,13 +16,13 @@ Getting Started
    
    getting-started/index
 
-Carvoyant API
--------------
+API Overview
+------------
 
 .. toctree::
 	:maxdepth: 2
 	
-	carvoyant-api/index
+	api-overview/index
 
 Sandbox API
 -----------
@@ -31,6 +31,14 @@ Sandbox API
 	:maxdepth: 2
 	
 	sandbox-api/index
+
+API Reference
+-------------
+
+.. toctree::
+   :maxdepth: 2
+   
+   api-reference/index
 
 Driver Dashboard
 ----------------

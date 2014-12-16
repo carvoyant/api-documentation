@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sorting and Paging &mdash; Carvoyant API 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Carvoyant API 1.0 documentation" href="../index.html" />
+    <link rel="up" title="API Overview" href="index.html" />
+    <link rel="next" title="Sandbox API" href="../sandbox-api/index.html" />
+    <link rel="prev" title="HTTP Verbs" href="http-verbs.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../sandbox-api/index.html" title="Sandbox API"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="http-verbs.html" title="HTTP Verbs"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Carvoyant API 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">API Overview</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="sorting-and-paging">
+<h1>Sorting and Paging<a class="headerlink" href="#sorting-and-paging" title="Permalink to this headline">¶</a></h1>
+<p>Many of the calls within the Carvoyant API return sets of data.  In some cases, very large sets of data.  For a number of reasons, it would not be feasible return the entire data set at once (we have some vehicles with over 100,000 data points after only 4-5 months of being on our system).  In order to address this, we have standardized the mechanism to sort and page results.  Any API call that supports sorting or pagination will do so as described here.</p>
+<div class="section" id="sorting">
+<h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h2>
+<p>In most cases, the objects being listed will sort based on a timesamp.  It might be the time that the trip was started or the time a data point was collected.  The documentation for the individual API call will indicate how the results are sorted.  In order to control the sort order of that field, you can include the following field in your query string:</p>
+<p><tt class="docutils literal"><span class="pre">sortOrder=asc</span></tt> will return the results in ascending order</p>
+<p><tt class="docutils literal"><span class="pre">sortOrder=desc</span></tt> will return the results in descending order</p>
+</div>
+<div class="section" id="paging">
+<h2>Paging<a class="headerlink" href="#paging" title="Permalink to this headline">¶</a></h2>
+<p>Paging is the mechanism by which the number of results returned are limited and the ability to retrieve the &#8220;next&#8221; set of data in the list.  There are two pieces of data important in specifying a paging mechanism.  The size of the data set returned and the starting point in the full data set where the returned results will begin.</p>
+<p><tt class="docutils literal"><span class="pre">searchLimit=&lt;x&gt;</span></tt> will specify how many results are included in the response</p>
+<p><tt class="docutils literal"><span class="pre">searchOffset=&lt;y&gt;</span></tt> will specify the offset from the beginning of the data set that is returned</p>
+<p>Generally, you will not need to figure out the values for the paging links manually.  They will be specified in the actions array of the return as &#8220;next&#8221; and &#8220;previous&#8221;.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/carvoyant-logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Sorting and Paging</a><ul>
+<li><a class="reference internal" href="#sorting">Sorting</a></li>
+<li><a class="reference internal" href="#paging">Paging</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="http-verbs.html"
+                        title="previous chapter">HTTP Verbs</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../sandbox-api/index.html"
+                        title="next chapter">Sandbox API</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api-overview/sorting-and-paging.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../sandbox-api/index.html" title="Sandbox API"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="http-verbs.html" title="HTTP Verbs"
+             >previous</a> |</li>
+        <li><a href="../index.html">Carvoyant API 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >API Overview</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Matt Galvin, Ronnie Williams.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
