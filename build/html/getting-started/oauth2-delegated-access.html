@@ -108,7 +108,7 @@ development partners credentials.</td>
 <h3>Authorization Code<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>The first step is to request the authorization from the user. This call will return a redirect to the login page.</p>
 <p><em>Authorize Request</em>:</p>
-<div class="highlight-python"><div class="highlight"><pre>curl -i -X GET -d &quot;client_id=pekfaf6jxk6suydc26qzmnxt&quot; --data-urlencode &quot;redirect_uri=http://test.carvoyant.com/&quot; -d &quot;response_type=code&quot; &quot;https://auth.carvoyant.com/OAuth/authorize&quot;
+<div class="highlight-python"><div class="highlight"><pre>curl -i -X GET -d &quot;client_id=pekfaf6jxk6suyXXXXXXXXXX&quot; --data-urlencode &quot;redirect_uri=http://test.carvoyant.com/&quot; -d &quot;response_type=code&quot; &quot;https://auth.carvoyant.com/OAuth/authorize&quot;
 
 HTTP/1.1 302 Found
 Content-Type: text/plain; charset=UTF-8
@@ -123,12 +123,12 @@ Connection: keep-alive
 <p>If you did this through a browser, the login screen would appear to the user:</p>
 <img alt="../_images/auth-dialog.png" src="../_images/auth-dialog.png" />
 <p>After logging in, the user will be redirected to the redirect_url specified in the authorization request with the authorization code appended to it.  For the request above, the redirect uri would look like::</p>
-<div class="highlight-python"><div class="highlight"><pre>http://test.carvoyant.com/?code=v369uars628mgkjsjgdgcmw2
+<div class="highlight-python"><div class="highlight"><pre>http://test.carvoyant.com/?code=v369uars628mgkXXXXXXXXXX
 </pre></div>
 </div>
 <p>From this response, the server running at test.carvoyant.com would parse the authorization code and make a request to the token endpoint to read an actual access token.  Note that this request requires the client id and secret key for the development partner to be passed as the Basic Authentication credentials.</p>
 <p><em>Access Token Request</em>:</p>
-<div class="highlight-python"><div class="highlight"><pre>curl -i --user pekfaf6jxk6suydc26qzmnxt:P77ccBNVZ3 -d &quot;grant_type=authorization_code&quot; -d &quot;code=v369uars628mgkjsjgdgcmw2&quot; --data-urlencode &quot;redirect_uri=http://test.carvoyant.com/&quot; &quot;https://api.carvoyant.com/oauth/token&quot;
+<div class="highlight-python"><div class="highlight"><pre>curl -i --user pekfaf6jxk6suyXXXXXXXXXX:XXXXXXXXXX -d &quot;grant_type=authorization_code&quot; -d &quot;code=v369uars628mgkXXXXXXXXXX&quot; --data-urlencode &quot;redirect_uri=http://test.carvoyant.com/&quot; &quot;https://api.carvoyant.com/oauth/token&quot;
 </pre></div>
 </div>
 <p>The response will include a json body with the access token information.</p>
@@ -143,10 +143,10 @@ Content-Length: 161
 Connection: keep-alive
 {
     &quot;token_type&quot;:&quot;bearer&quot;,
-    &quot;mapi&quot;:&quot;pekfaf6jxk6suydc26qzmnxt&quot;,
-    &quot;access_token&quot;:&quot;dmnda67wbdnyayvcq5883y36&quot;,
+    &quot;mapi&quot;:&quot;pekfaf6jxk6suyXXXXXXXXXX&quot;,
+    &quot;access_token&quot;:&quot;dmnda67wbdnyayXXXXXXXXXX&quot;,
     &quot;expires_in&quot;:86400,
-    &quot;refresh_token&quot;:&quot;f2hqes6fpg37d25q367qm9zw&quot;
+    &quot;refresh_token&quot;:&quot;f2hqes6fpg37d2XXXXXXXXXX&quot;
 }
 </pre></div>
 </div>
@@ -156,7 +156,7 @@ Connection: keep-alive
 <h3>Implicit<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>The first step is to request the authorization from the user. This call will return a redirect to the login page.</p>
 <p><em>Authorize Request</em>:</p>
-<div class="highlight-python"><div class="highlight"><pre>curl -i -X GET -d &quot;client_id=pekfaf6jxk6suydc26qzmnxt&quot; --data-urlencode &quot;redirect_uri=http://test.carvoyant.com/&quot; -d &quot;response_type=token&quot; &quot;https://auth.carvoyant.com/OAuth/authorize&quot;
+<div class="highlight-python"><div class="highlight"><pre>curl -i -X GET -d &quot;client_id=pekfaf6jxk6suyXXXXXXXXXX&quot; --data-urlencode &quot;redirect_uri=http://test.carvoyant.com/&quot; -d &quot;response_type=token&quot; &quot;https://auth.carvoyant.com/OAuth/authorize&quot;
 
 HTTP/1.1 302 Found
 Content-Type: text/plain; charset=UTF-8
@@ -171,7 +171,7 @@ Connection: keep-alive
 <p>If you did this through a browser, the login screen would appear to the user:</p>
 <img alt="../_images/auth-dialog.png" src="../_images/auth-dialog.png" />
 <p>After logging in, the user will be redirected to the redirect_url specified in the authorization request with the access token appended to it.  For the request above, the redirect uri would look like::</p>
-<div class="highlight-python"><div class="highlight"><pre>http://test.carvoyant.com/?access_token=2pr9tvk3vgnr9ac6mc5nh8fn&amp;token_type=bearer&amp;expires_in=86400
+<div class="highlight-python"><div class="highlight"><pre>http://test.carvoyant.com/?access_token=2pr9tvk3vgnr9aXXXXXXXXXX&amp;token_type=bearer&amp;expires_in=86400
 </pre></div>
 </div>
 <p>From this response, the endpoint at test.carvoyant.com would parse the access token and begin making API calls.</p>
@@ -180,7 +180,7 @@ Connection: keep-alive
 <h3>Client Credentials<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>In this grant type, there is no user interaction. The development partner requests a token for their client credentials directly.</p>
 <p><em>Access Token Request</em>:</p>
-<div class="highlight-python"><div class="highlight"><pre>curl -i --user pekfaf6jxk6suydc26qzmnxt:P77ccBNVZ3 -d &quot;grant_type=client_credentials&quot; &quot;https://api.carvoyant.com/oauth/token&quot;
+<div class="highlight-python"><div class="highlight"><pre>curl -i --user pekfaf6jxk6suyXXXXXXXXXX:XXXXXXXXXX -d &quot;grant_type=client_credentials&quot; &quot;https://api.carvoyant.com/oauth/token&quot;
 </pre></div>
 </div>
 <p>The response will include a json body with the access token information.</p>
@@ -195,9 +195,10 @@ Content-Length: 161
 Connection: keep-alive
 {
     &quot;token_type&quot;:&quot;bearer&quot;,
-    &quot;mapi&quot;:&quot;pekfaf6jxk6suydc26qzmnxt&quot;,
-    &quot;access_token&quot;:&quot;n45u7eufgdmfysuterkpkxus&quot;,
-    &quot;expires_in&quot;:86400,&quot;refresh_token&quot;:&quot;r9acw76k327g3c7q9cbher3y&quot;
+    &quot;mapi&quot;:&quot;pekfaf6jxk6suyXXXXXXXXXX&quot;,
+    &quot;access_token&quot;:&quot;n45u7eufgdmfysXXXXXXXXXX&quot;,
+    &quot;expires_in&quot;:86400,
+    &quot;refresh_token&quot;:&quot;r9acw76k327g3cXXXXXXXXXX&quot;
 }
 </pre></div>
 </div>

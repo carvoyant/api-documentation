@@ -51,7 +51,7 @@ The first step is to request the authorization from the user. This call will ret
 
 *Authorize Request*::
 
-   curl -i -X GET -d "client_id=pekfaf6jxk6suydc26qzmnxt" --data-urlencode "redirect_uri=http://test.carvoyant.com/" -d "response_type=code" "https://auth.carvoyant.com/OAuth/authorize"
+   curl -i -X GET -d "client_id=pekfaf6jxk6suyXXXXXXXXXX" --data-urlencode "redirect_uri=http://test.carvoyant.com/" -d "response_type=code" "https://auth.carvoyant.com/OAuth/authorize"
    
    HTTP/1.1 302 Found
    Content-Type: text/plain; charset=UTF-8
@@ -68,13 +68,13 @@ If you did this through a browser, the login screen would appear to the user:
 
 After logging in, the user will be redirected to the redirect_url specified in the authorization request with the authorization code appended to it.  For the request above, the redirect uri would look like:::
 
-   http://test.carvoyant.com/?code=v369uars628mgkjsjgdgcmw2
+   http://test.carvoyant.com/?code=v369uars628mgkXXXXXXXXXX
 
 From this response, the server running at test.carvoyant.com would parse the authorization code and make a request to the token endpoint to read an actual access token.  Note that this request requires the client id and secret key for the development partner to be passed as the Basic Authentication credentials.
 
 *Access Token Request*::
 
-   curl -i --user pekfaf6jxk6suydc26qzmnxt:P77ccBNVZ3 -d "grant_type=authorization_code" -d "code=v369uars628mgkjsjgdgcmw2" --data-urlencode "redirect_uri=http://test.carvoyant.com/" "https://api.carvoyant.com/oauth/token"
+   curl -i --user pekfaf6jxk6suyXXXXXXXXXX:XXXXXXXXXX -d "grant_type=authorization_code" -d "code=v369uars628mgkXXXXXXXXXX" --data-urlencode "redirect_uri=http://test.carvoyant.com/" "https://api.carvoyant.com/oauth/token"
 
 The response will include a json body with the access token information.
 
@@ -90,10 +90,10 @@ The response will include a json body with the access token information.
    Connection: keep-alive
    {
        "token_type":"bearer",
-       "mapi":"pekfaf6jxk6suydc26qzmnxt",
-       "access_token":"dmnda67wbdnyayvcq5883y36",
+       "mapi":"pekfaf6jxk6suyXXXXXXXXXX",
+       "access_token":"dmnda67wbdnyayXXXXXXXXXX",
        "expires_in":86400,
-       "refresh_token":"f2hqes6fpg37d25q367qm9zw"
+       "refresh_token":"f2hqes6fpg37d2XXXXXXXXXX"
    }
 
 At this point, the development partners system would store the access token and refresh token and use them for future requests.
@@ -105,7 +105,7 @@ The first step is to request the authorization from the user. This call will ret
 
 *Authorize Request*::
 
-   curl -i -X GET -d "client_id=pekfaf6jxk6suydc26qzmnxt" --data-urlencode "redirect_uri=http://test.carvoyant.com/" -d "response_type=token" "https://auth.carvoyant.com/OAuth/authorize"
+   curl -i -X GET -d "client_id=pekfaf6jxk6suyXXXXXXXXXX" --data-urlencode "redirect_uri=http://test.carvoyant.com/" -d "response_type=token" "https://auth.carvoyant.com/OAuth/authorize"
    
    HTTP/1.1 302 Found
    Content-Type: text/plain; charset=UTF-8
@@ -122,7 +122,7 @@ If you did this through a browser, the login screen would appear to the user:
 
 After logging in, the user will be redirected to the redirect_url specified in the authorization request with the access token appended to it.  For the request above, the redirect uri would look like:::
 
-   http://test.carvoyant.com/?access_token=2pr9tvk3vgnr9ac6mc5nh8fn&token_type=bearer&expires_in=86400
+   http://test.carvoyant.com/?access_token=2pr9tvk3vgnr9aXXXXXXXXXX&token_type=bearer&expires_in=86400
 
 From this response, the endpoint at test.carvoyant.com would parse the access token and begin making API calls.
 
@@ -133,7 +133,7 @@ In this grant type, there is no user interaction. The development partner reques
 
 *Access Token Request*::
 
-   curl -i --user pekfaf6jxk6suydc26qzmnxt:P77ccBNVZ3 -d "grant_type=client_credentials" "https://api.carvoyant.com/oauth/token"
+   curl -i --user pekfaf6jxk6suyXXXXXXXXXX:XXXXXXXXXX -d "grant_type=client_credentials" "https://api.carvoyant.com/oauth/token"
 
 The response will include a json body with the access token information.
 
@@ -149,9 +149,10 @@ The response will include a json body with the access token information.
    Connection: keep-alive
    {
        "token_type":"bearer",
-       "mapi":"pekfaf6jxk6suydc26qzmnxt",
-       "access_token":"n45u7eufgdmfysuterkpkxus",
-       "expires_in":86400,"refresh_token":"r9acw76k327g3c7q9cbher3y"
+       "mapi":"pekfaf6jxk6suyXXXXXXXXXX",
+       "access_token":"n45u7eufgdmfysXXXXXXXXXX",
+       "expires_in":86400,
+       "refresh_token":"r9acw76k327g3cXXXXXXXXXX"
    }
 
 At this point, the development partners system would store the access token and refresh token and use them for future requests.
