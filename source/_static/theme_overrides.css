@@ -3,7 +3,7 @@ html body .wy-side-nav-search {
 	background-color: #3261a1;
 }
 
-html body h1 h2 h3 h4 h5 {
+html body h1,h2,h3,h4,h5 {
 	color: #3261a1;
 	border-bottom: 1px solid #3cb83d;
 }
