@@ -13,3 +13,4 @@ A resource is an addressable object within the Carvoyant API.  These are the pri
    resources/data-point
    resources/event-subscription
    resources/event-notification
+   resources/test-subscription
