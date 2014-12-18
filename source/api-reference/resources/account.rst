@@ -41,7 +41,7 @@ The Account object represents a unique account within the Carvoyant system.
    * DELETE
 
 GET
-~~~
+---
 
 Returns one or more accounts.
 
@@ -88,7 +88,7 @@ Returns one or more accounts.
    }
 
 POST
-~~~~
+----
 
 Creates or updates an account. Note that the client credentials authentication mechanism must be used for account creation. User account access tokens are not authorized to create new accounts. In the response to the creation of a new response, an OAuth2 authorization code will be provided. The calling system can use that authorization code to retrieve an access token for the new account without required the user to explicitly grant access (creating the account assumes access has been granted).
 
@@ -130,7 +130,7 @@ Creates or updates an account. Note that the client credentials authentication m
    }
 
 DELETE
-~~~~~~
+------
 
 Deletes the specified account.
 
