@@ -5,20 +5,24 @@ A DataSet is a collection of :doc:`data-point` s taken at the same time.  For ex
 
 *Properties*
 
-+----------------+-------------------------------+-----------------------------------------------------------+
-| Property       | Type                          | Description                                               |
-+================+===============================+===========================================================+
-| id             | Integer                       | The internal system identifier for this data set.         |
-+----------------+-------------------------------+-----------------------------------------------------------+
-| timestamp      | :doc:`../data-type/date-time` | The time that the DataSet was created.                    |
-+----------------+-------------------------------+-----------------------------------------------------------+
-| datum          | :doc:`data-point`             | The :doc:`data-point` s contained within this DataSet.    |
-+----------------+-------------------------------+-----------------------------------------------------------+
-| ignitionStatus | String Enumeration            | The state of the vehicle when this DataSet was collected. |
-|                | ON                            |                                                           |
-|                | OFF                           |                                                           |
-|                | RUNNING                       |                                                           |
-+----------------+-------------------------------+-----------------------------------------------------------+
++----------------+-------------------------------+-----------------------------------------------------------+-----------------------+
+| Property       | Type                          | Description                                               | Required for Creation |
++================+===============================+===========================================================+=======================+
+| id             | Integer                       | The internal system identifier for this data set.         | Unsupported           |
++----------------+-------------------------------+-----------------------------------------------------------+-----------------------+
+| vin            | String                        | The VIN of the vehicle the data is from                   | Optional              |
++----------------+-------------------------------+-----------------------------------------------------------+-----------------------+
+| deviceId       | String                        | The deviceId of the device collecting the data            | Required              |
++----------------+-------------------------------+-----------------------------------------------------------+-----------------------+
+| timestamp      | :doc:`../data-type/date-time` | The time that the DataSet was created.                    | Required              |
++----------------+-------------------------------+-----------------------------------------------------------+-----------------------+
+| datum          | :doc:`data-point`             | The :doc:`data-point` s contained within this DataSet.    | Required              |
++----------------+-------------------------------+-----------------------------------------------------------+-----------------------+
+| ignitionStatus | String Enumeration            | The state of the vehicle when this DataSet was collected. | Required              |
+|                | ON                            |                                                           |                       |
+|                | OFF                           |                                                           |                       |
+|                | RUNNING                       |                                                           |                       |
++----------------+-------------------------------+-----------------------------------------------------------+-----------------------+
 
 *Supported Verbs*
 
@@ -117,6 +121,8 @@ POST
 
 Saves the data set to the specified vehicle. Note that in the production environment, this is a restricted call that only certain partners are authorized to use. If you feel you need to make calls to this endpoint, please `contact us <mailto://support@carvoyant.com>`_ . In the sandbox environment, this is available for everyone.
 
+Be aware that the system expects that a waypoint will be included with all DataSets that are posted to the system.  It will not fail without one, but the user expects location to to be available for all recorded data points.
+
 *Query Paths*
 
    * /vehicle/{vehicle-id}/dataSet/
@@ -125,6 +131,8 @@ Saves the data set to the specified vehicle. Note that in the production environ
 
    {  
       "timestamp":"20140811T140444+0000",
+      "vin":"123456789ABCDEFGH",
+      "deviceId":"C20120000X",
       "ignitionStatus":"ON",
       "datum":[  
          {  
