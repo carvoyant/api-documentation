@@ -5,6 +5,8 @@ The EventSubscription object represents a unique event subscription within the C
 
 The Event model that we have implemented is based off of the `Evented API Spec <http://www.eventedapi.org/>`_. This is a generic specification that helps define the transport of API events between two systems.
 
+See the :doc:`../data-type/event-type` page for details on the different events that can be subscribed to.
+
 .. note::
    You will only be able to interact with subscriptions that have been created with your client Id.  Specifically, we will look at the access token
    specified in the request, determine the client Id that was authorized with that access token, and only return subscriptions for that client Id.
@@ -17,7 +19,7 @@ The Event model that we have implemented is based off of the `Evented API Spec <
 +====================+=========================================+=============================================================================================================+=======================+
 | id                 | Integer                                 | The internal system identifier for this subscription.                                                       | Unsupported           |
 +--------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-| _type              | String                                  | The type of event being subscribed to. (In this case the _type is "LOWBATTERY")                             | Unsupported           |
+| _type              | :doc:`../data-type/event-type`          | The type of event being subscribed to. (In this case the _type is "LOWBATTERY")                             | Unsupported           |
 +--------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
 | creationTimestamp  | :doc:`../data-type/date-time`           | The time when the subscription was created.                                                                 | Unsupported           |
 +--------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -70,7 +72,7 @@ Returns one or more event subscriptions.  By default, the first 50 results are r
    | subscription-id | The Carvoyant identifier of the subscription. If the subscription-id is not                              |
    |                 | specified, then all subscriptions available will be returned.                                            |
    +-----------------+----------------------------------------------------------------------------------------------------------+
-   | event-type      | Indicates the type of subscriptions to be returned.                                                      |
+   | event-type      | Indicates the :doc:`../data-type/event-type` of subscriptions to be returned.                            |
    +-----------------+----------------------------------------------------------------------------------------------------------+
 
 *Call Options*
@@ -124,7 +126,7 @@ Returns one or more event subscriptions.  By default, the first 50 results are r
 POST
 ----
 
-Creates a subscription. The query parameters listed here are common to all EventTypes. In order to successfully create a subscription the body of the request must specify all required properties of the particular EventType.
+Creates a subscription. The query parameters listed here are common to all :doc:`../data-type/event-type`. In order to successfully create a subscription the body of the request must specify all required properties of the particular :doc:`../data-type/event-type`.
 
 .. note::
    Existing subscriptions cannot be updated.  To "change" a subscription, you must delete the old one
@@ -146,7 +148,7 @@ Creates a subscription. The query parameters listed here are common to all Event
    |            | C201200001) or it could be the internal id returned from a previous lookup. This is used for vehicle     |
    |            | level subscriptions                                                                                      |
    +------------+----------------------------------------------------------------------------------------------------------+
-   | event-type | Indicates the type of subscriptions to be returned.                                                      |
+   | event-type | Indicates the :doc:`../data-type/event-type` of subscriptions to be returned.                            |
    +------------+----------------------------------------------------------------------------------------------------------+
 
 *Sample Request*::
@@ -164,7 +166,7 @@ Creates a subscription. The query parameters listed here are common to all Event
 DELETE
 ------
 
-Marks a subscription for deletion. The system will purge the subscription after a set amount of time. These are not immediately deleted because doing so would also delete the history of EventNotifications for this subscription.
+Marks a subscription for deletion. The system will purge the subscription after a set amount of time. These are not immediately deleted because doing so would also delete the history of :doc:`event-notification` s for this subscription.
 
 *Query Paths*
 
@@ -187,7 +189,7 @@ Marks a subscription for deletion. The system will purge the subscription after 
    | subscription-id | The Carvoyant identifier of the subscription. If the subscription-id is not                              |
    |                 | specified, then all subscriptions available will be returned.                                            |
    +-----------------+----------------------------------------------------------------------------------------------------------+
-   | event-type      | Indicates the type of subscriptions to be returned.                                                      |
+   | event-type      | Indicates the :doc:`../data-type/event-type` of subscriptions to be returned.                            |
    +-----------------+----------------------------------------------------------------------------------------------------------+
 
 *Sample JSON Response*::

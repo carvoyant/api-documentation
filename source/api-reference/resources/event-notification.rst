@@ -5,6 +5,8 @@ The EventNotification object corresponds to a unique :doc:`event-subscription` w
 
 The Event model that we have implemented is based off of the `Evented API Spec <http://www.eventedapi.org/>`_. This is a generic specification that helps define the transport of API events between two systems.
 
+See the :doc:`../data-type/event-type` page for details on the different events that can be notified.
+
 .. note::
    You will only be able to get notifications that have been created for your client Id.  Specifically, we will look at the access token
    specified in the request, determine the client Id that was authorized with that access token, and only return notifications for :doc:`event-subscription` s
@@ -23,9 +25,9 @@ The Event model that we have implemented is based off of the `Evented API Spec <
 +--------------------+-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | _domain            | String                                  | Serves as a namespace for the event.                                                                                                                                                                                                                                                                                                     |
 +--------------------+-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| _type              | String                                  | The type of event notification being sent.                                                                                                                                                                                                                                                                                               |
+| _type              | :doc:`../data-type/event-type`          | The type of event notification being sent.                                                                                                                                                                                                                                                                                               |
 +--------------------+-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| _name              | String                                  | The type of event notification being sent. Note that this field should be considered deprecated. It is only supported because the Evented API spec has not fully implemented the change.                                                                                                                                                 |
+| _name              | :doc:`../data-type/event-type`          | The type of event notification being sent. Note that this field should be considered deprecated. It is only supported because the Evented API spec has not fully implemented the change.                                                                                                                                                 |
 +--------------------+-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | _timestamp         | :doc:`../data-type/date-time`           | The time when the event notification was created.                                                                                                                                                                                                                                                                                        |
 +--------------------+-----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -72,7 +74,7 @@ Returns one or more event notifications.  By default, the first 50 results are r
    +-----------------+----------------------------------------------------------------------------------------------------------+
    | subscription-id | The Carvoyant identifier of the subscription.                                                            |
    +-----------------+----------------------------------------------------------------------------------------------------------+
-   | event-type      | Indicates the type of notifications to be returned.                                                      |
+   | event-type      | Indicates the :doc:`../data-type/event-type` of notifications to be returned.                            |
    +-----------------+----------------------------------------------------------------------------------------------------------+
 
 *Call Options*
@@ -86,8 +88,8 @@ Returns one or more event notifications.  By default, the first 50 results are r
 *Sample JSON Response*
 
 .. note::
-   This response only includes the properties that are common to all EventTypes. It is not a complete response.  Refer to the EventType
-   for the detailed list of what properties are returned for the notification.
+   This response only includes the properties that are common to all :doc:`../data-type/event-type` . It is not a complete response.  Refer to the :doc:`../data-type/event-type`
+   page for the detailed list of what properties are returned for the notification.
 
 ::
 
