@@ -175,7 +175,7 @@ Driver behavior events trigger based on how the driver is driving.  Each are det
 
 *Supported Notification Periods*
 
-   * STATECHANGE
+   * INITIAL
    * ONETIME
 
 Vehicle Events
@@ -196,6 +196,6 @@ Vehicle events are generally related to events that occur with the vehicle that 
 
 *Supported Notification Periods*
 
-   * STATECHANGE
+   * INITIAL
    * ONETIME
 
