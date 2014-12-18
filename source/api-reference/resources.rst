@@ -6,7 +6,8 @@ A resource is an addressable object within the Carvoyant API.  These are the pri
 .. toctree::
    :maxdepth: 3
    
-   resources/data-point
-   resources/data-set
-   resources/trip
+   resources/account
    resources/vehicle
+   resources/trip
+   resources/data-set
+   resources/data-point

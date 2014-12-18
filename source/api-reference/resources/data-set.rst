@@ -1,7 +1,7 @@
 DataSet
 =======
 
-A DataSet is a collection of :doc:`data-point`s taken at the same time.  For example, a DataSet may contain a speed value, a battery voltage value and a GPS location.  It should be assumed that the DataPoints are related and were collected at the same time. This allows you to correlate different DataPoints with each other.
+A DataSet is a collection of :doc:`data-point` s taken at the same time.  For example, a DataSet may contain a speed value, a battery voltage value and a GPS location.  It should be assumed that the DataPoints are related and were collected at the same time. This allows you to correlate different DataPoints with each other.
 
 *Properties*
 
@@ -12,7 +12,7 @@ A DataSet is a collection of :doc:`data-point`s taken at the same time.  For exa
 +----------------+-------------------------------+-----------------------------------------------------------+
 | timestamp      | :doc:`../data-type/date-time` | The time that the DataSet was created.                    |
 +----------------+-------------------------------+-----------------------------------------------------------+
-| datum          | :doc:`data-point`             | The :doc:`data-point`s contained within this DataSet.     |
+| datum          | :doc:`data-point`             | The :doc:`data-point` s contained within this DataSet.    |
 +----------------+-------------------------------+-----------------------------------------------------------+
 | ignitionStatus | String Enumeration            | The state of the vehicle when this DataSet was collected. |
 |                | ON                            |                                                           |
