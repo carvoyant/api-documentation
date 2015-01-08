@@ -104,3 +104,44 @@ Open the SmartThings mobile application and select the + icon at the bottom. Swi
 First you must authorize Carvoyant to share data with SmartThings.  Select *Carvoyant Authorization*. This will open up a log in screen in the Carvoyant sandbox environment.  Log in with the driver account credentials that you created earlier. These are the same credentials you used to log in to https://sandbox-driver.carvoyant.com.
 
 <INSERT IMAGE>
+
+After authorizing Carvoyant to share data, you will be able to select which Carvoyant enable vehicles from your account you want available within SmartThings.  Select one or more vehicles.
+
+<INSERT IMAGE>
+
+Select the *Done* button in the top right to save your Carvoyant configuration. You will now have a SmartThings *thing* for each of your vehicles.
+
+Configure Some Actions
+~~~~~~~~~~~~~~~~~~~~~~
+
+Ignition On
+^^^^^^^^^^^
+
+Now that your vehicles are available within SmartThings, it's time to do something with them.  Go back into the *My Apps* screen within the mobile app.  This time, select *Carvoyant Actions*.
+
+<INSERT IMAGE>
+
+First assign a nick name to this instance of the Carvoyant Actions SmartApp.  This is not absolutely necessary but if you want different actions to happen for different vehicles, you'll need to install multiple copies of the SmartApp. Customizing the name makes it easier to distinguish within the SmartThings mobile application. We're going to call this one "Jeep Ignition On". Then select which vehicle(s) you want these actions to apply to. We are going to select the "1999 Jeep Wrangler". For the Vehicle Event, select "Ignition On".  Note that we have added support for adding in a motion sensor but we're not going to set that up in this example.
+
+<INSERT IMAGE>
+
+After selecting the vehicle and event type, click *Next*.  On this screen we will configure what happens. Again, we've added support for several different devices types but we're only going to turn on a light.
+
+<INSERT IMAGE>
+
+Select *Next* and you'll be taken to the final screen where you can control whether you want notifications to be sent to you.  We are not going to configure any so just select *Done*
+
+<INSERT IMAGE>
+
+Ignition Off
+^^^^^^^^^^^^
+
+The setup for ignition off is exactly the same.  Add a new instance of the Carvoyant Actions SmartApp.  This time title it "Jeep Ignition Off" and select the "1999 Jeep Wrangler". For Vehicle Event, this time we select "Ignition Off".
+
+<INSERT IMAGE>
+
+Select *Next*.  Choose the same bulb from the "Ignition On" setup.  This time, select "Off" for the bulb.
+
+<INSERT IMAGE>
+
+Select *Next* and since we are not configuring notifications, select *Done*.
