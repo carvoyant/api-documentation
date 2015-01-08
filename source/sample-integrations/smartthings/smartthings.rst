@@ -114,6 +114,10 @@ Select the *Done* button in the top right to save your Carvoyant configuration. 
 Configure Some Actions
 ~~~~~~~~~~~~~~~~~~~~~~
 
+These actions are going to be based on our vehicle and our connected bulbs.  Use whatever vehicle and bulbs (or any other switch for that matter) you have available. When you are done setting up these actions, your *My Apps* page will look similar to this:
+
+<INSERT IMAGE>
+
 Ignition On
 ^^^^^^^^^^^
 
@@ -145,3 +149,43 @@ Select *Next*.  Choose the same bulb from the "Ignition On" setup.  This time, s
 <INSERT IMAGE>
 
 Select *Next* and since we are not configuring notifications, select *Done*.
+
+Vehicle Arrived
+^^^^^^^^^^^^^^^
+
+When the vehicle *thing* was created during setup, the SmartApp created a geofence subscription based on the current latitude and longitude of the *Location* that your SmartHub is in. Presence is detected by your vehicle being within 1 mile of that location.
+
+To set up the arrival action, follow the same steps as the ignition status actions.  We will title this one "Jeep Arrival" and we are going to turn "Bulb 2" on.  No notifications will be sent.
+
+<INSERT IMAGE>
+
+<INSERT IMAGE>
+
+Vehicle Departed
+^^^^^^^^^^^^^^^^
+
+To set up the departed action, follow the same steps as the arrival action.  We will title this one "Jeep Departed" and we are going to turn "Bulb 2" off.  No notifications will be sent.
+
+<INSERT IMAGE>
+
+<INSERT IMAGE>
+
+Test It Out
+~~~~~~~~~~~
+
+In order to test that your actions are working properly, open up the `Traffic Simulator <https://sandbox-simulator.carvoyant.com>`_ and log in with the same credentials that you authorized within SmartThings.  You are going to simulate two trips, one driving to your location and one driving away from your location. First make sure that the vehicle you are simulating is the same one that you have configured within SmartThings.  You can change it using the drop down in the top right of the screen if necessary.
+
+Driving To Your Location
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Click a point on the map that is greater than 1 mile from your SmartHub Location. Click a second point at your SmartHub Location.  If you want you can change the simulation parameters but for this demonstration the details of the trip do not matter. When your trip is set up, click the *Simulate* button.
+
+When the vehicle "starts" (ie, you begin to see progress on the progress bar), "Bulb 1" will turn on.  As the simulated vehicle reaches 1 mile from your Location, "Bulb 2" will turn on.  When the trip ends, "Bulb 1" will turn off.
+
+Driving Away From Your Location
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Refresh the screen to start a new trip.  Click the first point at your SmartHub Location. Click the second point at some point greate than 1 mile away from your Location. Click the *Simulate* button.
+
+When the vehicle "starts" (ie, you begin to see progress on the progress bar), "Bulb 1" will turn on.  As the simulated vehicle exceeds 1 mile away from your Location, "Bulb 2" will turn off.  When the trip ends, "Bulb 1" will turn off.
+
