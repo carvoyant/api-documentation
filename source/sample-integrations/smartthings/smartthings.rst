@@ -4,7 +4,7 @@ SmartThings
 Overview
 --------
 
-At the end of this walk through, you will have added your Carvoyant enabled connected car to your SmartThings connected home. This will be a step-by-step instruction but it does assume some familiarity with the SmartThings ide and the standard nomenclature that SmartThings uses.  Specifically, you will be creating a custom device type and two custom SmartApps.
+At the end of this walk through, you will have added your Carvoyant enabled connected car to your SmartThings connected home. This will be a step-by-step instruction but it does assume some familiarity with the SmartThings IDE and the standard nomenclature that SmartThings uses.  Specifically, you will be creating a custom device type and two custom SmartApps.
 
 All of the code referenced here can be found in our `SmartThings Github repository <https://github.com/carvoyant/SmartThings>`_ .
 
@@ -103,23 +103,19 @@ Open the SmartThings mobile application and select the + icon at the bottom. Swi
    :scale: 25 %
    :align: center
 
-   
 First you must authorize Carvoyant to share data with SmartThings.  Select *Carvoyant Authorization*. This will open up a log in screen in the Carvoyant sandbox environment.  Log in with the driver account credentials that you created earlier. These are the same credentials you used to log in to https://sandbox-driver.carvoyant.com.
 
 .. image:: smartthings_carvoyant_setup_1.png
    :scale: 25 %
 
-
 .. image:: smartthings_carvoyant_setup_2.png
    :scale: 25 %
-
 
 After authorizing Carvoyant to share data, you will be able to select which Carvoyant enable vehicles from your account you want available within SmartThings.  Select one or more vehicles.
 
 .. image:: smartthings_carvoyant_setup_3.png
    :scale: 25 %
    :align: center
-
 
 Select the *Done* button in the top right to save your Carvoyant configuration. You will now have a SmartThings *thing* for each of your vehicles.
 
@@ -132,7 +128,6 @@ These actions are going to be based on our vehicle and our connected bulbs.  Use
    :scale: 25 %
    :align: center
 
-
 Ignition On
 ^^^^^^^^^^^
 
@@ -144,20 +139,17 @@ First assign a nick name to this instance of the Carvoyant Actions SmartApp.  Th
    :scale: 25 %
    :align: center
 
-
 After selecting the vehicle and event type, click *Next*.  On this screen we will configure what happens. Again, we've added support for several different devices types but we're only going to turn on a light.
 
 .. image:: smartthings_carvoyant_ignitionon_2.png
    :scale: 25 %
    :align: center
 
-
 Select *Next* and you'll be taken to the final screen where you can control whether you want notifications to be sent to you.  We are not going to configure any so just select *Done*
 
 .. image:: smartthings_carvoyant_ignitionon_3.png
    :scale: 25 %
    :align: center
-
 
 Ignition Off
 ^^^^^^^^^^^^
@@ -168,13 +160,11 @@ The setup for ignition off is exactly the same.  Add a new instance of the Carvo
    :scale: 25 %
    :align: center
 
-
 Select *Next*.  Choose the same bulb from the "Ignition On" setup.  This time, select "Off" for the bulb.
 
 .. image:: smartthings_carvoyant_ignitionoff_2.png
    :scale: 25 %
    :align: center
-
 
 Select *Next* and since we are not configuring notifications, select *Done*.
 
@@ -188,10 +178,8 @@ To set up the arrival action, follow the same steps as the ignition status actio
 .. image:: smartthings_carvoyant_arrival_1.png
    :scale: 25 %
 
-
 .. image:: smartthings_carvoyant_arrival_2.png
    :scale: 25 %
-
 
 Vehicle Departed
 ^^^^^^^^^^^^^^^^
@@ -201,10 +189,8 @@ To set up the departed action, follow the same steps as the arrival action.  We 
 .. image:: smartthings_carvoyant_departure_1.png
    :scale: 25 %
 
-
 .. image:: smartthings_carvoyant_departure_2.png
    :scale: 25 %
-
 
 Test It Out
 ~~~~~~~~~~~
@@ -224,4 +210,3 @@ Driving Away From Your Location
 Refresh the screen to start a new trip.  Click the first point at your SmartHub Location. Click the second point at some point greate than 1 mile away from your Location. Click the *Simulate* button.
 
 When the vehicle "starts" (ie, you begin to see progress on the progress bar), "Bulb 1" will turn on.  As the simulated vehicle exceeds 1 mile away from your Location, "Bulb 2" will turn off.  When the trip ends, "Bulb 1" will turn off.
-
