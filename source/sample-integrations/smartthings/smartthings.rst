@@ -66,7 +66,7 @@ Once the service manager is created, go back into it and select the *App Setting
 +-------------------+----------------------------------------------------------------------------------------+
 | Name              | Value                                                                                  |
 +===================+========================================================================================+
-| carvoyantApiUrl   | The Carvoyant API URL. For now, enter ``https://sandbox-api.carvoyant.com``            |
+| carvoyantApiUrl   | The Carvoyant API URL. For now, enter ``https://sandbox-api.carvoyant.com/sandbox``    |
 +-------------------+----------------------------------------------------------------------------------------+
 | carvoyantAuthUrl  | The Carvoyant Authorization URL. For now, enter ``https://sandbox-auth.carvoyant.com`` |
 +-------------------+----------------------------------------------------------------------------------------+
@@ -76,6 +76,8 @@ Once the service manager is created, go back into it and select the *App Setting
 +-------------------+----------------------------------------------------------------------------------------+
 
 Save your changes and then *Publish* the SmartApp.
+
+Finally, go back into the *App Settings* for the SmartApp and open the *OAuth* section.  Click the *Enable* button.
 
 Carvoyant Actions SmartApp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
