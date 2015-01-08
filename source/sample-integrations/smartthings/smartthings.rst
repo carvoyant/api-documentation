@@ -192,11 +192,9 @@ To set up the departed action, follow the same steps as the arrival action.  We 
 
 .. image:: smartthings_carvoyant_departure_1.png
    :scale: 25 %
-   :align: center
 
 .. image:: smartthings_carvoyant_departure_2.png
    :scale: 25 %
-   :align: center
 
 Test It Out
 ~~~~~~~~~~~
