@@ -100,16 +100,20 @@ Install the Connected Car Setup SmartApp
 Open the SmartThings mobile application and select the + icon at the bottom. Swipe right until you get to *My Apps*. You should see the two Carvoyant SmartApps available. Select *Connected Car Setup*.
 
 .. image:: smartthings_carvoyant_myapps_add.png
+   :scale: 25 %
 
 First you must authorize Carvoyant to share data with SmartThings.  Select *Carvoyant Authorization*. This will open up a log in screen in the Carvoyant sandbox environment.  Log in with the driver account credentials that you created earlier. These are the same credentials you used to log in to https://sandbox-driver.carvoyant.com.
 
 .. image:: smartthings_carvoyant_setup_1.png
+   :scale: 25 %
 
 .. image:: smartthings_carvoyant_setup_2.png
+   :scale: 25 %
 
 After authorizing Carvoyant to share data, you will be able to select which Carvoyant enable vehicles from your account you want available within SmartThings.  Select one or more vehicles.
 
 .. image:: smartthings_carvoyant_setup_3.png
+   :scale: 25 %
 
 Select the *Done* button in the top right to save your Carvoyant configuration. You will now have a SmartThings *thing* for each of your vehicles.
 
@@ -119,6 +123,7 @@ Configure Some Actions
 These actions are going to be based on our vehicle and our connected bulbs.  Use whatever vehicle and bulbs (or any other switch for that matter) you have available. When you are done setting up these actions, your *My Apps* page will look similar to this:
 
 .. image:: smartthings_carvoyant_myapps_installed.png
+   :scale: 25 %
 
 Ignition On
 ^^^^^^^^^^^
@@ -128,14 +133,17 @@ Now that your vehicles are available within SmartThings, it's time to do somethi
 First assign a nick name to this instance of the Carvoyant Actions SmartApp.  This is not absolutely necessary but if you want different actions to happen for different vehicles, you'll need to install multiple copies of the SmartApp. Customizing the name makes it easier to distinguish within the SmartThings mobile application. We're going to call this one "Jeep Ignition On". Then select which vehicle(s) you want these actions to apply to. We are going to select the "1999 Jeep Wrangler". For the Vehicle Event, select "Ignition On".  Note that we have added support for adding in a motion sensor but we're not going to set that up in this example.
 
 .. image:: smartthings_carvoyant_ignitionon_1.png
+   :scale: 25 %
 
 After selecting the vehicle and event type, click *Next*.  On this screen we will configure what happens. Again, we've added support for several different devices types but we're only going to turn on a light.
 
 .. image:: smartthings_carvoyant_ignitionon_2.png
+   :scale: 25 %
 
 Select *Next* and you'll be taken to the final screen where you can control whether you want notifications to be sent to you.  We are not going to configure any so just select *Done*
 
 .. image:: smartthings_carvoyant_ignitionon_3.png
+   :scale: 25 %
 
 Ignition Off
 ^^^^^^^^^^^^
@@ -143,10 +151,12 @@ Ignition Off
 The setup for ignition off is exactly the same.  Add a new instance of the Carvoyant Actions SmartApp.  This time title it "Jeep Ignition Off" and select the "1999 Jeep Wrangler". For Vehicle Event, this time we select "Ignition Off".
 
 .. image:: smartthings_carvoyant_ignitionoff_1.png
+   :scale: 25 %
 
 Select *Next*.  Choose the same bulb from the "Ignition On" setup.  This time, select "Off" for the bulb.
 
 .. image:: smartthings_carvoyant_ignitionoff_2.png
+   :scale: 25 %
 
 Select *Next* and since we are not configuring notifications, select *Done*.
 
@@ -158,8 +168,10 @@ When the vehicle *thing* was created during setup, the SmartApp created a geofen
 To set up the arrival action, follow the same steps as the ignition status actions.  We will title this one "Jeep Arrival" and we are going to turn "Bulb 2" on.  No notifications will be sent.
 
 .. image:: smartthings_carvoyant_arrival_1.png
+   :scale: 25 %
 
 .. image:: smartthings_carvoyant_arrival_2.png
+   :scale: 25 %
 
 Vehicle Departed
 ^^^^^^^^^^^^^^^^
@@ -167,8 +179,10 @@ Vehicle Departed
 To set up the departed action, follow the same steps as the arrival action.  We will title this one "Jeep Departed" and we are going to turn "Bulb 2" off.  No notifications will be sent.
 
 .. image:: smartthings_carvoyant_departure_1.png
+   :scale: 25 %
 
 .. image:: smartthings_carvoyant_departure_2.png
+   :scale: 25 %
 
 Test It Out
 ~~~~~~~~~~~
