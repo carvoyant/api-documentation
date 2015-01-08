@@ -128,6 +128,8 @@ Select the *Done* button in the top right to save your Carvoyant configuration. 
 Configure Some Actions
 ~~~~~~~~~~~~~~~~~~~~~~
 
+Now that your vehicles are available within SmartThings, it's time to do something with them.  Go back into the *My Apps* screen within the mobile app.  This time, select *Carvoyant Actions*.
+
 These actions are going to be based on our vehicle and our connected bulbs.  Use whatever vehicle and bulbs (or any other switch for that matter) you have available. When you are done setting up these actions, your *My Apps* page will look similar to this:
 
 .. image:: smartthings_carvoyant_myapps_installed.png
@@ -136,8 +138,6 @@ These actions are going to be based on our vehicle and our connected bulbs.  Use
 
 Ignition On
 ^^^^^^^^^^^
-
-Now that your vehicles are available within SmartThings, it's time to do something with them.  Go back into the *My Apps* screen within the mobile app.  This time, select *Carvoyant Actions*.
 
 First assign a nick name to this instance of the Carvoyant Actions SmartApp.  This is not absolutely necessary but if you want different actions to happen for different vehicles, you'll need to install multiple copies of the SmartApp. Customizing the name makes it easier to distinguish within the SmartThings mobile application. We're going to call this one "Jeep Ignition On". Then select which vehicle(s) you want these actions to apply to. We are going to select the "1999 Jeep Wrangler". For the Vehicle Event, select "Ignition On".  Note that we have added support for adding in a motion sensor but we're not going to set that up in this example.
 
