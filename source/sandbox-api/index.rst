@@ -39,10 +39,10 @@ If you already have a developer account you can easily add a sandbox key to it a
 
 Next you need to decide whether you want to add the key to an existing application or create a new one. It's probably easier to create a new one.  Decide which you want to do and add the Sandbox API key.
 
-Interactive Documentation
--------------------------
+Interactive API
+---------------
 
-Just like the production API, you can use the online interactive documentation to make calls against the Sandbox API. After creating your Sandbox API key, switch over to the Documentation and change the API to Sandbox API.
+Just like the production API, you can use the online interactive API to make calls against the Sandbox API. After creating your Sandbox API key, switch over to the Interactive API and change the API to Sandbox API.
 
 .. image:: sandbox-iodocs.png
 
