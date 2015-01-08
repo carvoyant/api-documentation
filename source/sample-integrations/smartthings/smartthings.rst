@@ -225,3 +225,21 @@ Driving Away From Your Location
 Refresh the screen to start a new trip.  Click the first point at your SmartHub Location. Click the second point at some point greate than 1 mile away from your Location. Click the *Simulate* button.
 
 When the vehicle "starts" (ie, you begin to see progress on the progress bar), "Bulb 1" will turn on.  As the simulated vehicle exceeds 1 mile away from your Location, "Bulb 2" will turn off.  When the trip ends, "Bulb 1" will turn off.
+
+Making It Smarter
+-----------------
+
+In order to keep this guide simple, we've chosen to implement only two very basic events from the Carvoyant platform; geofencing and ignition status. The Carvoyant system supports many more events than just those two however. Perhaps you want to signal an alarm in your house if the battery in your car is running low while it's parked outside? Or set an alarm is a certain vehicle in your house is speeding or in an accident? Many of the use cases around a connected car are presence related and can be handled using mobile devices instead but sometimes that's not sufficient. There may also be data collected from the car that can't be detected in other ways that you want to trigger actions within your smart home.
+
+Regardless of why, if you want to extend the functionality to include any of the :doc:`/api-reference/data-type/event-type` notifications that we support, here's how you do it. This expects you to be a lot more familiar with both SmartThings and Carvoyant development than the above guide.
+
+First you need to decide what data it is that you are going to receive from Carvoyant and decide how to store it. You may need to add a *capability* to the *Connected Car Device Type*. Or perhaps simply adding an additional attribue is enough. For ignitionStatus we added a new *attribute*.
+
+Next, decide where to create the Carvoyant event subscriptions.  The geofence and ignition status subscriptions are created within the service manager SmartApp when the vehicle is created. You can create them there if you like. The other alternative is to have the Carvoyant Action SmartApp manage the subscription creation and deletion.  In either case, you'll use the service manager SmartApp to make an API call to Carvoyant with the subscription.
+
+When a notification is generated from Carvoyant for a subscription, it needs a URL to post to. Update the service manager SmartApp and add a new web service mapping. Follow the same pattern that you see for the others. You'll add a method that gets called that will update the attribute on the connected car device.
+
+Now that SmartThings is receiving the events, you'll need to integrate them with your other *things*. You could enhance the *Carvoyant Actions* SmartApp to support the new functionality or you could write your own SmartApp.  The choice is up to you!
+
+
+Now go have fun connecting your car to the rest of your life!
