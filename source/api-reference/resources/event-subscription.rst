@@ -40,6 +40,15 @@ See the :doc:`../data-type/event-type` page for details on the different events 
 |                    |                                         | types are supported for LowBattery subscriptions.                                                           |                       |
 +--------------------+-----------------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
 
+*Automated Updates*
+
+We have implemented some logic to automatically update subscriptions based on responses to the notifications that are sent to them.  When the Carvoyant system attempts to send a notification to the ``postUrl``, the following actions will be taken based on the response code.
+
+   * HTTP 301 (Moved Permanently) and HTTP 308 (Permanent Redirect) - The postUrl of the subscription will be updated with the value in the ``Location`` response header.  The notification will then be resent to the new postUrl.
+   * HTTP 302 (Found) and HTTP 307 (Temporary Redirect) - The notification will be resent to the url specified in the ``Location`` response header but the postUrl of the subscription will remain unchanged.
+   * HTTP 4xx - We assume these are fatal errors and the subscription will be deleted.
+   * HTTP 5xx - We assume these are temporary server side errors.  The current notification will not be attempted again but the subscription will remain unchanged.
+
 *Supported Verbs*
 
    * GET
