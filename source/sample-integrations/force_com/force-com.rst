@@ -7,6 +7,7 @@ Overview
 At the end of this walk through, you will have created a map within your Force.com application that updates the position of vehicles from your Carvoyant account as they travel around.  The end screen will look similar to this:
 
 .. image:: salesforce-vehiclemap.png
+   :align: center
 
 You will be able to use the Carvoyant traffic simulator to simulate a trip for any of the vehicles and the map within the Force.com application will be updated with the new locations of the vehicle.
 
@@ -18,6 +19,7 @@ Step 1 - Create the CarvoyantTest Application
 Log in to your account and create a new application.  Under the Setup screen click the green "Add App" button.
 
 .. image:: salesforce-create-app.png
+   :align: center
 
 Use the following values:
 
@@ -51,6 +53,7 @@ Create a new geolocation field with the following values:
 Your Vehicle record will look like this:
 
 .. image:: salesforce-vehicle-object.png
+   :align: center
 
 Step 3 - Create a Connected App
 -------------------------------
@@ -58,6 +61,7 @@ Step 3 - Create a Connected App
 Under Setup select Create -> Apps.  Under the Connected Apps section, select New.
 
 .. image:: salesforce-connected-app.png
+   :align: center
 
 Use the following values:
 
@@ -305,6 +309,7 @@ We will use the command line tool curl to make an API request into the Salesforc
 YOUR_APP_CLIENT_ID and YOUR_APP_CLIENT_SECRET can be found within the Connect App that was created in Step 3.  Under Setup, select Create -> Apps and click on "Carvoyant API" under the Connected Apps section.  Your CLIENT ID and CLIENT SECRET can be found on that screen as the "Consumer Key" and "Consumer Secret":
 
 .. image:: salesforce-client-creds.png
+   :align: center
 
 Next, you need to get your security token.  Follow the instructions here: https://help.salesforce.com/apex/HTViewHelpDoc?id=user_security_token.htm
 
@@ -331,6 +336,7 @@ Step 9 - Create the Carvoyant Event Subscription
 The simplest way to do this is to log in to the Carvoyant developer console at https://developer.carvoyant.com and use the Interactive API.  Switch to the Sandbox API after logging in.  Generate your access token and make a call to create a Waypoint Subscription:
 
 .. image:: salesforce-create-subscription.png
+   :align: center
 
 Enter the ``vehicleId`` that you want to send to Salesforce (you can check the Id if you don't know it by calling the list vehicles endpoint).  The request body to send will look like this:::
 
@@ -353,10 +359,12 @@ Test it Out!
 At this point, all of the configuration and setup is completed.  The integration is ready to go.  Log in to the traffic simulator at https://sandbox-simulator.carvoyant.com and start simulating trips for your vehicles.  When you log in to your Salesforce application (and select CarvoyantTest as your application in the top right), you'll see two tabs, Vehicle and Vehicle Map.  Vehicle will display a list of any vehicles that have been sent over:
 
 .. image:: salesforce-vehicles-tab.png
+   :align: center
 
 Note that the first time you open the Vehicle Map, no pins will be visible.  Once you send data over from the traffic simulator you will need to reload the Vehicle Map page.  Once the pin displays, the location will be updated as new data is received without having to refresh the page.  Click on the Vehicle Map page after data is sent over the first time and you'll see something like this:
 
 .. image:: salesforce-vehiclemap.png
+   :align: center
 
 If you want to hook this up to production, the only thing you would need to do is create the Carvoyant Event Subscription against a vehicle in the Production environment (instead of the Sandbox).
 
