@@ -109,7 +109,7 @@ Open the SmartThings mobile application and select the + icon at the bottom. Swi
    :scale: 25 %
    :align: center
 
-First you must authorize Carvoyant to share data with SmartThings.  Select *Carvoyant Authorization*. This will open up a log in screen in the Carvoyant sandbox environment.  Log in with the driver account credentials that you created earlier. These are the same credentials you used to log in to https://sandbox-driver.carvoyant.com.
+First you must authorize Carvoyant to share data with SmartThings.  Select *Carvoyant Authorization*. This will open up a log in screen in the Carvoyant sandbox environment.  Log in with the driver account credentials that you created earlier. These are the same credentials you used to log in to https://sandbox-driver.carvoyant.com. When you see the confirmation screen, select *Done*.
 
 .. image:: smartthings_carvoyant_setup_1.png
    :scale: 25 %
@@ -117,9 +117,19 @@ First you must authorize Carvoyant to share data with SmartThings.  Select *Carv
 .. image:: smartthings_carvoyant_setup_2.png
    :scale: 25 %
 
+.. image:: smartthings_carvoyant_setup_3.png
+   :scale: 25 %
+
+
 After authorizing Carvoyant to share data, you will be able to select which Carvoyant enable vehicles from your account you want available within SmartThings.  Select one or more vehicles.
 
-.. image:: smartthings_carvoyant_setup_3.png
+.. image:: smartthings_carvoyant_setup_4.png
+   :scale: 25 %
+   :align: center
+   
+Select the vehicles you want to add to SmartThings and then select *Done*
+
+.. image:: smartthings_carvoyant_setup_5.png
    :scale: 25 %
    :align: center
 
@@ -201,7 +211,7 @@ To set up the departed action, follow the same steps as the arrival action.  We 
 Test It Out
 ~~~~~~~~~~~
 
-In order to test that your actions are working properly, open up the `Traffic Simulator <https://sandbox-simulator.carvoyant.com>`_ and log in with the same credentials that you authorized within SmartThings.  You are going to simulate two trips, one driving to your location and one driving away from your location. First make sure that the vehicle you are simulating is the same one that you have configured within SmartThings.  You can change it using the drop down in the top right of the screen if necessary.
+In order to test that your actions are working properly, open up the `Traffic Simulator <https://sandbox-simulator.carvoyant.com>`_ and log in with the same Carvoyant credentials that you authorized within SmartThings.  You are going to simulate two trips, one driving to your location and one driving away from your location. First make sure that the vehicle you are simulating is the same one that you have configured within SmartThings.  You can change it using the drop down in the top right of the screen if necessary.
 
 Driving To Your Location
 ^^^^^^^^^^^^^^^^^^^^^^^^
