@@ -42,7 +42,7 @@ Next you need to decide whether you want to add the key to an existing applicati
 Interactive API
 ---------------
 
-Just like the production API, you can use the online interactive API to make calls against the Sandbox API. After creating your Sandbox API key, switch over to the Interactive API and change the API to Sandbox API.
+Just like the production API, you can use the `online interactive API <https://developer.carvoyant.com/io-docs>`_ to make calls against the Sandbox API. After creating your Sandbox API key, switch over to the Interactive API and change the API to Sandbox API.
 
 .. image:: sandbox-iodocs.png
 
