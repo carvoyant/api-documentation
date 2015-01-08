@@ -37,6 +37,10 @@ Once you have a developer account, you will need to create a Carvoyant client id
 
 After your sandbox application is created, register a driver account at https://sandbox-driver.carvoyant.com and add a vehicle to it. Get familiar with simulating data against your sandbox account as described in the :doc:`/sandbox-api/index` . Confirm that you can make API calls using the `Interactive API <https://developer.carvoyant.com/io-docs>`_ .
 
+.. note::
+
+   The Carvoyant sandbox environment is used for this walk through only because it's easy to simulate the data and show how the integration works. Everything that can be done here can be done against the Carvoyant production environment.  The only thing you would do differently is create an application for the Carvoyant Production API (ie, client id and secret), use the production API and Auth URLs and a production Carvoyant driver account.
+
 SmartThings Account
 ~~~~~~~~~~~~~~~~~~~
 
