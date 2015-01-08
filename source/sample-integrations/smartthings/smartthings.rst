@@ -112,14 +112,13 @@ Open the SmartThings mobile application and select the + icon at the bottom. Swi
 First you must authorize Carvoyant to share data with SmartThings.  Select *Carvoyant Authorization*. This will open up a log in screen in the Carvoyant sandbox environment.  Log in with the driver account credentials that you created earlier. These are the same credentials you used to log in to https://sandbox-driver.carvoyant.com. When you see the confirmation screen, select *Done*.
 
 .. image:: smartthings_carvoyant_setup_1.png
-   :scale: 25 %
+   :scale: 20 %
 
 .. image:: smartthings_carvoyant_setup_2.png
-   :scale: 25 %
+   :scale: 20 %
 
 .. image:: smartthings_carvoyant_setup_3.png
-   :scale: 25 %
-
+   :scale: 20 %
 
 After authorizing Carvoyant to share data, you will be able to select which Carvoyant enable vehicles from your account you want available within SmartThings.  Select one or more vehicles.
 
