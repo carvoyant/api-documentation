@@ -5,13 +5,15 @@ A waypoint is a GPS location at a specific point in time.
 
 *Properties*
 
-+---------------+----------+-----------------------------------------+----------+
-| Property Name | Type     | Description                             | Optional |
-+===============+==========+=========================================+==========+
-| timestamp     | DateTime | The time that the location was recorded | N        |
-| latitude      | Float    | The latitude of the location            | N        |
-| longitude     | Float    | The longitude of the location           | N        |
-+---------------+----------+-----------------------------------------+----------+
++---------------+-------------------------------+-----------------------------------------+----------+
+| Property Name | Type                          | Description                             | Optional |
++===============+===============================+=========================================+==========+
+| timestamp     | :doc:`../data-type/date-time` | The time that the location was recorded | N        |
++---------------+-------------------------------+-----------------------------------------+----------+
+| latitude      | Float                         | The latitude of the location            | N        |
++---------------+-------------------------------+-----------------------------------------+----------+
+| longitude     | Float                         | The longitude of the location           | N        |
++---------------+-------------------------------+-----------------------------------------+----------+
 
 *JSON Sample*::
 
