@@ -17,7 +17,10 @@ The Vehicle object represents a unique vehicle within the Carvoyant system. All 
 +----------------------+-------------------------------+-------------------------------------------------------------------------------------------------+-----------------------+
 | vin                  | String                        | The Vehicle Identifier Number. Will be null if the vehicle is currently unidentified.           | Optional              |
 +----------------------+-------------------------------+-------------------------------------------------------------------------------------------------+-----------------------+
-| label                | String                        | A custom label that the driver can assign to the vehicle.                                       | Optional              |
+| vin                  | String                        | The Vehicle Identifier Number. Will be null if the vehicle is currently unidentified.           | Optional              |
++----------------------+-------------------------------+-------------------------------------------------------------------------------------------------+-----------------------+
+| autoAssignDevice     | Boolean                       | Indicates whether the system can automatically reassign devices to or from this vehicle.        | Optional              |
+|                      |                               | Defaults to true.                                                                               |                       |
 +----------------------+-------------------------------+-------------------------------------------------------------------------------------------------+-----------------------+
 | mileage              | Integer                       | The current odometer reading of the vehicle.                                                    | Optional              |
 +----------------------+-------------------------------+-------------------------------------------------------------------------------------------------+-----------------------+
