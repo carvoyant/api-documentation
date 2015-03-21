@@ -53,7 +53,7 @@ GeoFence events will trigger when a vehicles location is reported at a certain l
 
    * CONTINUOUS
    * STATECHANGE
-   * INITIAL
+   * INITIALSTATE
    * ONETIME
 
 Ignition Status
@@ -70,7 +70,7 @@ Ignition status events will trigger when a vehicles engine state (ie, ignition s
 *Supported Notification Periods*
 
    * STATECHANGE
-   * INITIAL
+   * INITIALSTATE
    * ONETIME
 
 Low Battery
@@ -88,7 +88,7 @@ The low battery event will trigger when the voltage read from the vehicle falls 
 
    * CONTINUOUS
    * STATECHANGE
-   * INITIAL
+   * INITIALSTATE
    * ONETIME
 
 Numeric Data Keys
@@ -122,7 +122,7 @@ Numeric data key events will trigger when the value of the specified :doc:`data-
 
    * CONTINUOUS
    * STATECHANGE
-   * INITIAL
+   * INITIALSTATE
    * ONETIME
 
 Time Of Day
@@ -160,7 +160,7 @@ The TimeOfDay Subscription allows event notification when a vehicle is operated 
 
    * CONTINUOUS
    * STATECHANGE
-   * INITIAL
+   * INITIALSTATE
    * ONETIME
 
 Trouble Code
@@ -176,7 +176,7 @@ The trouble code event will trigger when the vehicle reports a Diagnostic Troubl
 
 *Supported Notification Periods*
 
-   * INITIAL
+   * INITIALSTATE
    * ONETIME
 
 Driver Behaviors
@@ -201,7 +201,7 @@ Driver behavior events trigger based on how the driver is driving.  Each are det
 
 *Supported Notification Periods*
 
-   * INITIAL
+   * INITIALSTATE
    * ONETIME
 
 Vehicle Events
@@ -224,7 +224,7 @@ Vehicle events are generally related to events that occur with the vehicle that 
 
 *Supported Notification Periods*
 
-   * INITIAL
+   * INITIALSTATE
    * ONETIME
 
 Vehicle Creation
