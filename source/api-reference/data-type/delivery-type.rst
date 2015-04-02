@@ -29,7 +29,7 @@ HTTP_POST
 
 This DeliveryType will uses HTTP POST to submit the :doc:`../resources/event-notification` the specified URL.
 
-*DeliveryType Properties*
+*HTTP_POST Properties*
 
 +-------------+--------+------------------------------------------------------------------------------------------------------------+-----------------------+
 | Name        | Type   | Description                                                                                                | Required for Creation |
@@ -45,7 +45,7 @@ EMAIL
 
 This DeliveryType will send an email with the details of the :doc:`../resources/event-notification` .
 
-*DeliveryType Properties*
+*EMAIL Properties*
 
 +-------------------+--------+-------------------------------------------------+-----------------------+
 | Name              | Type   | Description                                     | Required for Creation |
