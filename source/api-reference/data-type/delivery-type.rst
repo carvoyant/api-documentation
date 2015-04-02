@@ -3,7 +3,7 @@ DeliveryType
 
 .. error:: 
 
-   DeliveryType objects within an :doc:`../resources/event-subscription.rst` are not yet supported
+   DeliveryType objects within an :doc:`../resources/event-subscription` are not yet supported
    in the production environment.
 
 A DeliveryType represents how a notification should be sent when the subscription criteria is met. The following types are supported:
@@ -27,7 +27,7 @@ A DeliveryType represents how a notification should be sent when the subscriptio
 HTTP_POST
 ---------
 
-This DeliveryType will uses HTTP POST to submit the :doc:`../resources/event-notification.rst` the specified URL.
+This DeliveryType will uses HTTP POST to submit the :doc:`../resources/event-notification` the specified URL.
 
 *DeliveryType Properties*
 
@@ -43,7 +43,7 @@ This DeliveryType will uses HTTP POST to submit the :doc:`../resources/event-not
 EMAIL
 -----
 
-This DeliveryType will send an email with the details of the :doc:`../resources/event-notification.rst` .
+This DeliveryType will send an email with the details of the :doc:`../resources/event-notification` .
 
 *DeliveryType Properties*
 
