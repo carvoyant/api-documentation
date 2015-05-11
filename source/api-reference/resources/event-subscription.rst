@@ -14,46 +14,43 @@ See the :doc:`../data-type/event-type` page for details on the different events 
 
 *Common Properties*
 
-+--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-| Property           | Type                                       | Description                                                                                                 | Required for Creation |
-+====================+============================================+=============================================================================================================+=======================+
-| id                 | Integer                                    | The internal system identifier for this subscription.                                                       | Unsupported           |
-+--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-| _type              | :doc:`../data-type/event-type`             | The type of event being subscribed to. (In this case the _type is "LOWBATTERY")                             | Unsupported           |
-+--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-| creationTimestamp  | :doc:`../data-type/date-time`              | The time when the subscription was created.                                                                 | Unsupported           |
-+--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-| deletionTimestamp  | :doc:`../data-type/date-time`              | The time when the subscription was marked for deletion. (This value will only be returned if the event has  | Unsupported           |
-|                    |                                            | been marked for deletion)                                                                                   |                       |
-+--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-| minimumTime        | Integer                                    | The time in minutes that will determine the minimum interval between event notification creation. If the    | Required              |
-|                    |                                            | value is less than the reporting interval of the hardware, the hardware limit will be used.                 |                       |
-+--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-| creatorClientId    | String                                     | The client Id that generated this subscription.                                                             | Unsupported           |
-+--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-| postUrl            | String                                     | The URL that will receive HTTPS POST notifications from the newly generated subscription. Note that only    | Required              |
-|                    |                                            | HTTPS endpoints are supported. The certificate protecting the post URL must be a valid signed certificate.  |                       |
-+--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-| postHeaders        | Map                                        | A map that contains any headers that should be sent to the postUrl when a notification is generated.        | Optional              |
-+--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-| notificationPeriod | :doc:`../data-type/notification-period`    | A string that represents when EventNotifications are sent from the Carvoyant system. All NotificationPeriod | Required              |
-|                    |                                            | types are supported for LowBattery subscriptions.                                                           |                       |
-+--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-| deliveries         | Array of :doc:`../data-type/delivery-type` | An array with the delivery types for this subscription                                                      | Required              |
-+--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------+
-
-.. error:: 
-
-   The deliveries property is not not yet supported in the production environment.
++--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------+
+| Property           | Type                                       | Description                                                                                                 | Required for Creation  |
++====================+============================================+=============================================================================================================+========================+
+| id                 | Integer                                    | The internal system identifier for this subscription.                                                       | Unsupported            |
++--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------+
+| _type              | :doc:`../data-type/event-type`             | The type of event being subscribed to. (In this case the _type is "LOWBATTERY")                             | Unsupported            |
++--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------+
+| creationTimestamp  | :doc:`../data-type/date-time`              | The time when the subscription was created.                                                                 | Unsupported            |
++--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------+
+| deletionTimestamp  | :doc:`../data-type/date-time`              | The time when the subscription was marked for deletion. (This value will only be returned if the event has  | Unsupported            |
+|                    |                                            | been marked for deletion)                                                                                   |                        |
++--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------+
+| minimumTime        | Integer                                    | The time in minutes that will determine the minimum interval between event notification creation. If the    | Required               |
+|                    |                                            | value is less than the reporting interval of the hardware, the hardware limit will be used.                 |                        |
++--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------+
+| creatorClientId    | String                                     | The client Id that generated this subscription.                                                             | Unsupported            |
++--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------+
+| postUrl            | String                                     | The URL that will receive HTTPS POST notifications from the newly generated subscription. Note that only    | Deprecated             |
+|                    |                                            | HTTPS endpoints are supported. The certificate protecting the post URL must be a valid signed certificate.  | Use deliveries instead |
++--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------+
+| postHeaders        | Map                                        | A map that contains any headers that should be sent to the postUrl when a notification is generated.        | Deprecated             |
+|                    |                                            |                                                                                                             | Use deliveries instead |
++--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------+
+| notificationPeriod | :doc:`../data-type/notification-period`    | A string that represents when EventNotifications are sent from the Carvoyant system. All NotificationPeriod | Required               |
+|                    |                                            | types are supported for LowBattery subscriptions.                                                           |                        |
++--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------+
+| deliveries         | Array of :doc:`../data-type/delivery-type` | An array with the delivery types for this subscription                                                      | Required               |
++--------------------+--------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------------+
 
 *Automated Updates*
 
-We have implemented some logic to automatically update subscriptions based on responses to the notifications that are sent to them.  When the Carvoyant system attempts to send a notification to the ``postUrl``, the following actions will be taken based on the response code.
+We have implemented some logic to automatically update subscriptions based on responses to the notifications that are sent to them.  When the Carvoyant system attempts to send a notification to a ``HTTP_POST`` delivery option, the following actions will be taken based on the response code.
 
-   * HTTP 301 (Moved Permanently) and HTTP 308 (Permanent Redirect) - The postUrl of the subscription will be updated with the value in the ``Location`` response header.  The notification will then be resent to the new postUrl.
-   * HTTP 302 (Found) and HTTP 307 (Temporary Redirect) - The notification will be resent to the url specified in the ``Location`` response header but the postUrl of the subscription will remain unchanged.
-   * HTTP 4xx - We assume these are fatal errors and the subscription will be deleted.
-   * HTTP 5xx - We assume these are temporary server side errors.  The current notification will not be attempted again but the subscription will remain unchanged.
+   * HTTP 301 (Moved Permanently) and HTTP 308 (Permanent Redirect) - The postUrl of the delivery will be updated with the value in the ``Location`` response header.  The notification will then be resent to the new postUrl.
+   * HTTP 302 (Found) and HTTP 307 (Temporary Redirect) - The notification will be resent to the url specified in the ``Location`` response header but the postUrl of the delivery option will remain unchanged.
+   * HTTP 4xx - We assume these are fatal errors and the delivery option will be deleted.
+   * HTTP 5xx - We assume these are temporary server side errors.  The current notification will not be attempted again but the delivery option will remain unchanged.
 
 *Supported Verbs*
 
