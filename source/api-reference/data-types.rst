@@ -11,3 +11,4 @@ There are several defined data types beyond the normal primatives that are used 
    data-type/notification-period
    data-type/waypoint
    data-type/event-type
+   data-type/delivery-type
