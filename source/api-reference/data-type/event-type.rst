@@ -4,6 +4,7 @@ EventType
 An EventType represents and event that can be triggered within the Carvoyant system. API users can subscribe to these events using an :doc:`../resources/event-subscription`. This page describes the details of each event type. In the details below you will find the following:
 
 * Event Scope: Events can be set at the system, account or vehicle scope.
+
 +---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+
 | Scope   | Description                                                                                                                                                                                                                 | Query Path Prefixes |
 +=========+=============================================================================================================================================================================================================================+=====================+
@@ -253,6 +254,7 @@ This event will notify you of the change in access grants to an account for your
 *Scope*: System
 
 *Event Type Key*:
+
    * AUTHORIZATIONSTATUS: Indicates that the authorization status for the account has changed.
    
 *Subscription Properties*: No additional properties
