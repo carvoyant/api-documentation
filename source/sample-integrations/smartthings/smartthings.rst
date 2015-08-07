@@ -66,9 +66,17 @@ Once the service manager is created, go back into it and select the *App Setting
 +-------------------+----------------------------------------------------------------------------------------+
 | Name              | Value                                                                                  |
 +===================+========================================================================================+
-| carvoyantApiUrl   | The Carvoyant API URL. For now, enter ``https://sandbox-api.carvoyant.com/sandbox``    |
+| carvoyantApiUrl   | The Carvoyant API URL.                                                                 |
+|                   | Sandbox: ``https://sandbox-api.carvoyant.com/sandbox``                                 |
+|                   | Production: ``https://api.carvoyant.com/v1/api``                                       |
 +-------------------+----------------------------------------------------------------------------------------+
-| carvoyantAuthUrl  | The Carvoyant Authorization URL. For now, enter ``https://sandbox-auth.carvoyant.com`` |
+| carvoyantAuthUrl  | The Carvoyant Authorization URL.                                                       |
+|                   | Sandbox: ``https://sandbox-auth.carvoyant.com``                                        |
+|                   | Production: ``https://auth.carvoyant.com``                                             |
++-------------------+----------------------------------------------------------------------------------------+
+| carvoyantTokenUrl | The Carvoyant Token URL.                                                               |
+|                   | Sandbox: ``https://sandbox-api.carvoyant.com/oauth/token``                             |
+|                   | Production: ``https://api.carvoyant.com/oauth/token``                                  |
 +-------------------+----------------------------------------------------------------------------------------+
 | carvoyantClientId | This is the Client Id for the Carvoyant Sandbox Application that you created.          |
 +-------------------+----------------------------------------------------------------------------------------+
