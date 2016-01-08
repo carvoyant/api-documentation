@@ -37,6 +37,19 @@ Returns data sets for the specified vehicle.  By default, the first 50 results a
 *Query Paths*
 
    * /vehicle/{vehicle-id}/dataSet/
+   * /vehicle/{vehicle-id}/dataSet/?startTime={startTime}&endTime={endTime}
+
+*Query Parameters*
+
+   +-------------+-------------------------------------------------------------------------------------------------------------------+
+   | Parameter   | Description                                                                                                       |
+   +=============+===================================================================================================================+
+   | startTime   | Used for filtering the results.  Only data sets that started after this time are returned.  See DateTime for the  |
+   |             | format details.                                                                                                   |
+   +-------------+-------------------------------------------------------------------------------------------------------------------+
+   | endTime     | Used for filtering the results.  Only data sets that started before this time are returned.  See DateTime for the |
+   |             | format details. Only applies if no trip-id is specified.                                                          |
+   +-------------+-------------------------------------------------------------------------------------------------------------------+
 
 *Call Options*
 
