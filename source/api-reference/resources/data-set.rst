@@ -48,7 +48,7 @@ Returns data sets for the specified vehicle.  By default, the first 50 results a
    |             | format details.                                                                                                   |
    +-------------+-------------------------------------------------------------------------------------------------------------------+
    | endTime     | Used for filtering the results.  Only data sets that started before this time are returned.  See DateTime for the |
-   |             | format details. Only applies if no trip-id is specified.                                                          |
+   |             | format details.                                                                                                   |
    +-------------+-------------------------------------------------------------------------------------------------------------------+
 
 *Call Options*
